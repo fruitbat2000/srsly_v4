@@ -5,7 +5,7 @@ var SkillList = React.createClass({
 	render: function() {
 		var skills = this.props.data.map(function (skill) {
 			return (
-				<li>{skill}</li>
+				<li key={skill}>{skill}</li>
 			)
 		});
 		return (
@@ -17,14 +17,9 @@ var SkillList = React.createClass({
 });
 
 var Skills = React.createClass({
-	getInitialState: function () {
-    return {
-       data: data.skills
-    };
-	},
 	render: function() {
 		return (
-			<SkillList data={this.state.data} />
+			<SkillList data={data.skills} />
 		);
 	}
 });

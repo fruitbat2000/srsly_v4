@@ -22,21 +22,25 @@
   ],
   "projects": [
     {
+      "id": 1,
       "title": "M&S Gift Finder",
       "brand": "M&S",
       "skills": ["HTML5", "CSS3", "Javascript", "Angular", "Grunt", "SASS"]
     },
     {
+      "id": 2,
       "title": "MINI Digital",
       "brand": "MINI",
       "skills": ["HTML5", "CSS3", "Javascript", "Angular", "AEM6", "Sightly", "LESS"]
     },
     {
+      "id": 3,
       "title": "Toyota Test Drive",
       "brand": "Toyota",
       "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "Node", "Express", "SocketIO", "LESS", "Grunt"]
     },
     {
+      "id": 4,
       "title": "SRSLY v4",
       "brand": "SRSLY",
       "skills": ["HTML5", "CSS3", "Javascript", "React", "Webpack", "Grunt", "LESS", "Node", "Express"]

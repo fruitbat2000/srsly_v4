@@ -5,9 +5,9 @@ var FilterSkills = React.createClass({
 	render: function() {
 		var skills = this.props.data.map(function (skill) {
 			return (
-				<li>
+				<li key={skill}>
 					<input type="checkbox" name={skill} />
-					<label for={skill}>{skill}</label>
+					<label htmlFor={skill}>{skill}</label>
 				</li>
 			)
 		});
@@ -23,9 +23,9 @@ var FilterBrands = React.createClass({
 	render: function() {
 		var brands = this.props.data.map(function (brand) {
 			return (
-				<li>
+				<li key={brand}>
 					<input type="checkbox" name={brand} />
-					<label for={brand}>{brand}</label>
+					<label htmlFor={brand}>{brand}</label>
 				</li>
 			)
 		});
@@ -38,16 +38,11 @@ var FilterBrands = React.createClass({
 });
 
 var Filters = React.createClass({
-	getInitialState: function () {
-    return {
-       data: data
-    };
-	},
 	render: function() {
 		return (
 			<aside className="filters">
-				<FilterSkills data={this.state.data.skills} />
-				<FilterBrands data={this.state.data.brands} />
+				<FilterSkills data={data.skills} />
+				<FilterBrands data={data.brands} />
 			</aside>
 		);
 	}

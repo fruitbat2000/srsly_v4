@@ -6,7 +6,7 @@ var NavList = React.createClass({
 		var navItems = this.props.data.map(function (navItem) {
 			var href = '#'+navItem.toLowerCase();
 			return (
-				<li>
+				<li key={navItem}>
 					<a href={href}>{navItem}</a>
 				</li>
 			)
@@ -20,15 +20,10 @@ var NavList = React.createClass({
 });
 
 var Nav = React.createClass({
-	getInitialState: function () {
-	    return {
-	       data: data.navItems
-	    };
-	},
 	render: function() {
 		return (
 			<nav>
-				<NavList data={this.state.data} />
+				<NavList data={data.navItems} />
 			</nav>
 		);
 	}

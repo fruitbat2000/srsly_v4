@@ -7,11 +7,11 @@ var ProjectList = React.createClass({
 		var projects = this.props.data.map(function (project) {
 			var projectSkills = project.skills.map(function (skill) {
 				return (
-					<li>{skill}</li>
+					<li key={skill}>{skill}</li>
 				)
 			});
 			return (
-				<li>
+				<li key={project.id}>
 					<h3>{project.title}</h3>
 					<span>{project.brand}</span>
 					<ul>
