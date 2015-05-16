@@ -1,0 +1,57 @@
+{
+  "skills": [
+    "HTML5",
+    "CSS3",
+    "Javascript",
+    "jQuery",
+    "Backbone",
+    "Angular",
+    "React",
+    "SocketIO",
+    "Grunt",
+    "LESS",
+    "SASS",
+    "Node",
+    "Express",
+    "AEM6",
+    "Sightly",
+    "Webpack",
+    "RequireJS",
+    "Stylus",
+    "Handlebars"
+  ],
+  "projects": [
+    {
+      "title": "M&S Gift Finder",
+      "brand": "M&S",
+      "skills": ["HTML5", "CSS3", "Javascript", "Angular", "Grunt", "SASS"]
+    },
+    {
+      "title": "MINI Digital",
+      "brand": "MINI",
+      "skills": ["HTML5", "CSS3", "Javascript", "Angular", "AEM6", "Sightly", "LESS"]
+    },
+    {
+      "title": "Toyota Test Drive",
+      "brand": "Toyota",
+      "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "Node", "Express", "SocketIO", "LESS", "Grunt"]
+    },
+    {
+      "title": "SRSLY v4",
+      "brand": "SRSLY",
+      "skills": ["HTML5", "CSS3", "Javascript", "React", "Webpack", "Grunt", "LESS", "Node", "Express"]
+    }
+  ],
+  "labs": [
+    {
+      "title": "SRSLY v3",
+      "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "Stylus", "Grunt", "Handlebars", "RequireJS"]
+    }
+  ],
+  "navItems": [
+    "Intro",
+    "Projects",
+    "Labs",
+    "Contact"
+  ]
+}
