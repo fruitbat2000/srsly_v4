@@ -1,7 +1,8 @@
 var React = require('react'),
 		Intro = require('./intro'),
 		Nav = require('./nav'),
-		Projects = require('./projects');
+		Projects = require('./projects'),
+		Contact = require('./contact');
 
 var App = React.createClass({
 	render() {
@@ -10,6 +11,7 @@ var App = React.createClass({
 				<Intro />
 				<Nav />
 				<Projects />
+				<Contact />
 			</div>
 		);
 	}

@@ -29,6 +29,14 @@ var ProjectList = React.createClass({
 	}
 });
 
+var ProjectDetail = React.createClass({
+	render: function() {
+		return (
+			<div className="project-detail"></div>
+		)
+	}
+});
+
 var Projects = React.createClass({
 	getInitialState: function () {
     return {

@@ -3,11 +3,6 @@ var React = require('react'),
 		data = require('../../data.json');
 
 var Intro = React.createClass({
-	getInitialState: function () {
-	    return {
-	       data: data.navItems
-	    };
-	},
 	render: function() {
 		return (
 			<section id="intro">
