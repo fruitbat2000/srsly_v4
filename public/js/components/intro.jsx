@@ -11,7 +11,7 @@ var Intro = React.createClass({
 	render: function() {
 		return (
 			<section id="intro">
-				<img />
+				<img src="../../images/kittenComp.jpg" />
 				<div className="logo">
 					<h1>$(<span>SRSLY</span>);</h1>
 					<h2>seriously good &lsaquo;code&rsaquo;</h2>
