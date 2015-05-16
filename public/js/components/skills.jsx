@@ -4,8 +4,9 @@ var React = require('react'),
 var SkillList = React.createClass({
 	render: function() {
 		var skills = this.props.data.map(function (skill) {
+			var id = skill.replace(/ /g,'').toLowerCase();
 			return (
-				<li key={skill}>{skill}</li>
+				<li key={id}>{skill}</li>
 			)
 		});
 		return (

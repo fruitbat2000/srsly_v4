@@ -25,31 +25,41 @@
       "id": 1,
       "title": "M&S Gift Finder",
       "brand": "M&S",
-      "skills": ["HTML5", "CSS3", "Javascript", "Angular", "Grunt", "SASS"]
+      "skills": ["HTML5", "CSS3", "Javascript", "Angular", "Grunt", "SASS"],
+      "labs": false
     },
     {
       "id": 2,
       "title": "MINI Digital",
       "brand": "MINI",
-      "skills": ["HTML5", "CSS3", "Javascript", "Angular", "AEM6", "Sightly", "LESS"]
+      "skills": ["HTML5", "CSS3", "Javascript", "Angular", "AEM6", "Sightly", "LESS"],
+      "labs": false
     },
     {
       "id": 3,
       "title": "Toyota Test Drive",
       "brand": "Toyota",
-      "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "Node", "Express", "SocketIO", "LESS", "Grunt"]
+      "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "Node", "Express", "SocketIO", "LESS", "Grunt"],
+      "labs": false
     },
     {
       "id": 4,
       "title": "SRSLY v4",
       "brand": "SRSLY",
-      "skills": ["HTML5", "CSS3", "Javascript", "React", "Webpack", "Grunt", "LESS", "Node", "Express"]
-    }
-  ],
-  "labs": [
+      "skills": ["HTML5", "CSS3", "Javascript", "React", "Webpack", "Grunt", "LESS", "Node", "Express"],
+      "labs": true
+    },
     {
+      "id": 5,
       "title": "SRSLY v3",
-      "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "Stylus", "Grunt", "Handlebars", "RequireJS"]
+      "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "Stylus", "Grunt", "Handlebars", "RequireJS"],
+      "labs": true
+    },
+    {
+      "id": 6,
+      "title": "Amazon Author Tracker",
+      "skills": ["HTML5", "CSS3", "Javascript", "Angular", "Grunt", "MongoDB", "Node", "Express"],
+      "labs": true
     }
   ],
   "navItems": [
@@ -59,7 +69,7 @@
     "Contact"
   ],
   "brands": [
-    "M&S",
+    "M & S",
     "MINI",
     "Toyota",
     "SRSLY"

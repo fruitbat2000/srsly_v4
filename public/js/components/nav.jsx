@@ -4,9 +4,10 @@ var React = require('react'),
 var NavList = React.createClass({
 	render: function() {
 		var navItems = this.props.data.map(function (navItem) {
-			var href = '#'+navItem.toLowerCase();
+			var href = '#'+navItem.toLowerCase(),
+					id = navItem.replace(/ /g, '').toLowerCase();
 			return (
-				<li key={navItem}>
+				<li key={id}>
 					<a href={href}>{navItem}</a>
 				</li>
 			)

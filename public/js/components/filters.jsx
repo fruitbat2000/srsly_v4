@@ -4,10 +4,11 @@ var React = require('react'),
 var FilterSkills = React.createClass({
 	render: function() {
 		var skills = this.props.data.map(function (skill) {
+			var id = 'filter-'+skill.replace(/ /g,'').toLowerCase();
 			return (
-				<li key={skill}>
-					<input type="checkbox" name={skill} />
-					<label htmlFor={skill}>{skill}</label>
+				<li key={id}>
+					<input type="checkbox" name={skill} id={id} />
+					<label htmlFor={id}>{skill}</label>
 				</li>
 			)
 		});
@@ -22,10 +23,11 @@ var FilterSkills = React.createClass({
 var FilterBrands = React.createClass({
 	render: function() {
 		var brands = this.props.data.map(function (brand) {
+			var id = 'filter-'+brand.replace(/ /g,'').toLowerCase();
 			return (
-				<li key={brand}>
-					<input type="checkbox" name={brand} />
-					<label htmlFor={brand}>{brand}</label>
+				<li key={id}>
+					<input type="checkbox" name={brand} id={id} />
+					<label htmlFor={id}>{brand}</label>
 				</li>
 			)
 		});
@@ -37,10 +39,32 @@ var FilterBrands = React.createClass({
 	}
 });
 
+var FilterType = React.createClass({
+	render: function() {
+		return (
+			<ul>
+				<li>
+					<input type="checkbox" name="filterProjects" id="filter-projects" />
+					<label htmlFor="filter-projects">Projects</label>
+				</li>
+				<li>
+					<input type="checkbox" name="filterLabs" id="filter-labs" />
+					<label htmlFor="filter-labs">Labs</label>
+				</li>
+				<li>
+					<input type="checkbox" name="filterAll" id="filter-all" />
+					<label htmlFor="filter-all">All</label>
+				</li>
+			</ul>
+		)
+	}
+});
+
 var Filters = React.createClass({
 	render: function() {
 		return (
 			<aside className="filters">
+				<FilterType />
 				<FilterSkills data={data.skills} />
 				<FilterBrands data={data.brands} />
 			</aside>

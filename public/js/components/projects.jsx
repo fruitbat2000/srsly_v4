@@ -6,8 +6,9 @@ var ProjectList = React.createClass({
 	render: function() {
 		var projects = this.props.data.map(function (project) {
 			var projectSkills = project.skills.map(function (skill) {
+				var id = skill.replace(/ /g,'').toLowerCase();
 				return (
-					<li key={skill}>{skill}</li>
+					<li key={id}>{skill}</li>
 				)
 			});
 			return (
