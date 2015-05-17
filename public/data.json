@@ -52,6 +52,7 @@
     {
       "id": 5,
       "title": "SRSLY v3",
+      "brand": "SRSLY",
       "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "Stylus", "Grunt", "Handlebars", "RequireJS"],
       "labs": true
     },
