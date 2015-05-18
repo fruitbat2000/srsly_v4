@@ -1,0 +1,42 @@
+html {
+	box-sizing: border-box;
+}
+
+#content {
+	margin: 0 auto;
+	max-width: 1500px;
+	position: relative;
+}
+
+.logo {
+	color: @white;
+	margin-bottom: 40px;
+	h1 {
+		.font-size(56);
+		line-height:1;
+		margin-bottom:0;
+		.bold {
+			font-family:"Museo-700", Arial, sans-serif;
+		}
+	}
+	h2 {
+		.font-size(31);
+		font-family:"Quan-RoundedBook", Arial, sans-serif;
+		line-height:1;
+		margin-bottom:0;
+	}
+}
+
+.skew {
+	position: relative;
+	&:after {
+		content: ' ';
+		height: 100%;
+		position: absolute;
+		right: -30px;
+		top: 0;
+		transform: skewX(-25deg);
+		width: 60px;
+		z-index: -1;
+	}
+}

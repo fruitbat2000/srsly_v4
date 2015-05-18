@@ -136,7 +136,7 @@ var Projects = React.createClass({
 	},
 	render: function() {
 		return (
-			<section id="#projects">
+			<section id="projects">
 				<Filters onUserInput={this.handleUserInput} />
 				<ProjectList
 					data={this.state.data}

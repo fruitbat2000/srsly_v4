@@ -58,7 +58,7 @@ var FilterBrands = React.createClass({
 var FilterType = React.createClass({
 	render: function() {
 		return (
-			<ul>
+			<ul className="filter-type">
 				<li>
 					<input type="checkbox" name="filterProjects" id="filter-projects" />
 					<label htmlFor="filter-projects">Projects</label>

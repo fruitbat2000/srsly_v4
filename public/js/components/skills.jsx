@@ -6,13 +6,19 @@ var SkillList = React.createClass({
 		var skills = this.props.data.map(function (skill) {
 			var id = skill.replace(/ /g,'').toLowerCase();
 			return (
-				<li key={id}>{skill}</li>
+				<li key={id}>{skill},</li>
 			)
 		});
 		return (
-			<ul className="skills-list">
-				{skills}
-			</ul>
+			<div className="skills-container">
+				<h4>skillsArray:</h4>
+				<span>[</span>
+				<ul className="skills-list">
+					{skills}
+					<li>etc</li>
+				</ul>
+				<span>];</span>
+			</div>
 		)
 	}
 });
