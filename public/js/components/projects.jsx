@@ -13,10 +13,8 @@ var ProjectList = React.createClass({
 		if(this.props.skillFilters.length) {
 			skillArray = this.filterBySkill(array);
 		}
-		tmp = brandArray.concat(skillArray);
-		newArray = this.deDupeProjects(tmp);
+		newArray = this.deDupeProjects(brandArray, skillArray);
 
-		console.log(newArray);
 		return newArray;
 	},
 	filterByBrand: function(array) {
@@ -30,19 +28,42 @@ var ProjectList = React.createClass({
 		return newArray;
 	},
 	filterBySkill: function(array) {
-		var newArray = [];
+		var newArray = [],
+				inArray = false;
 		this.props.skillFilters.map(function (skill) {
 			array.forEach(function (project) {
 				if (project.skills.indexOf(skill) > -1) {
-					newArray.push(project);
+					for (var i in newArray) {
+		        if (newArray[i].id === project.id) {
+		        		inArray = true
+		            break;
+		        }
+		      }
+		      if(!inArray) {
+		      	newArray.push(project);
+		      }
 				}
 			});
 		});
 		return newArray;
 	},
-	deDupeProjects: function(array) {
-		console.log('deDupeProjects');
-		return array;
+	deDupeProjects: function(arr1, arr2) {
+	  var arr3 = [];
+	  for(var i in arr1){
+	     var shared = false;
+	     for (var j in arr2) {
+	        if (arr2[j].id === arr1[i].id) {
+	            shared = true;
+	            break;
+	        }
+	      }
+	    if(!shared) {
+	      arr3.push(arr1[i]);
+	    }
+	  }
+	  arr3 = arr3.concat(arr2);
+
+		return arr3;
 	},
 	render: function() {
 		var projectArray;
