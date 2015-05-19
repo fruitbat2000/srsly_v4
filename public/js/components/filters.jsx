@@ -21,7 +21,7 @@ var FilterSkills = React.createClass({
 			)
 		});
 		return (
-			<ul className="filter-skills">
+			<ul className="filter-grp filter-skills">
 				{skills}
 			</ul>
 		)
@@ -48,7 +48,7 @@ var FilterBrands = React.createClass({
 			)
 		});
 		return (
-			<ul className="filter-brands">
+			<ul className="filter-grp filter-brands">
 				{brands}
 			</ul>
 		)
@@ -58,7 +58,7 @@ var FilterBrands = React.createClass({
 var FilterType = React.createClass({
 	render: function() {
 		return (
-			<ul className="filter-type">
+			<ul className="filter-grp filter-type">
 				<li>
 					<input type="checkbox" name="filterProjects" id="filter-projects" />
 					<label htmlFor="filter-projects">Projects</label>

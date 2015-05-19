@@ -29,21 +29,23 @@ var ProjectList = React.createClass({
 	},
 	filterBySkill: function(array) {
 		var newArray = [],
+				tmp = {},
 				inArray = false;
 		this.props.skillFilters.map(function (skill) {
 			array.forEach(function (project) {
-				if (project.skills.indexOf(skill) > -1) {
-					for (var i in newArray) {
-		        if (newArray[i].id === project.id) {
-		        		inArray = true
-		            break;
-		        }
-		      }
-		      if(!inArray) {
-		      	newArray.push(project);
-		      }
+				if(project.skills.indexOf(skill) > -1) {
+					newArray.push(project);
 				}
 			});
+
+			for ( var i=0; i < newArray.length; i++ ) {
+			    tmp[newArray[i]['id']] = newArray[i];
+			}
+
+			newArray = new Array();
+			for ( var key in tmp ) {
+			    newArray.push(tmp[key]);
+			}
 		});
 		return newArray;
 	},
