@@ -4,7 +4,7 @@ var Contact = React.createClass({
 	render: function() {
 		return (
 			<section id="contact">
-				<h2>Contact Me!</h2>
+				<h3 className="contact-title skew">Contact Me!</h3>
 			</section>
 		);
 	}

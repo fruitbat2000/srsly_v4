@@ -106,7 +106,7 @@
       "id": "011",
       "title": "AltoStratus",
       "desc": "Altostratus is my attempt to build a fully fetured music player using the Dropbox API for music storage. It's not finished and was one of my first Backbone projects so definitely requires some refactoring, but given my lack of experience at the time it's a fairly good effort! It pulls file data from the user's Dropbox to populate albums/songs and then streams selected songs via a HTML5 audio element. It uses Backbone, LESS and Handlebars to do the magic.",
-      "brand": "SRSLY labs",
+      "brand": "SRSLY Labs",
       "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "LESS", "Grunt", "API", "Handlebars"],
       "labs": true
     },
