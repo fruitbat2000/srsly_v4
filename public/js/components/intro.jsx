@@ -1,6 +1,5 @@
 var React = require('react'),
-		Skills = require('./skills'),
-		data = require('../../data.json');
+		Skills = require('./skills');
 
 var Intro = React.createClass({
 	render: function() {

@@ -4,6 +4,8 @@ var React = require('react'),
 		Projects = require('./projects'),
 		Contact = require('./contact');
 
+React.initializeTouchEvents(true);
+
 var App = React.createClass({
 	render() {
 		return (
