@@ -53,6 +53,8 @@ var Projects = React.createClass({
 	render: function() {
 		return (
 			<section id="projects">
+				<h3 className="project-title skew">Projects</h3>
+				<div>
 				<Filters onUserInput={this.handleFilters} />
 				<ProjectList
 					data={this.state.data}
@@ -63,6 +65,7 @@ var Projects = React.createClass({
 					currentId={this.state.currentId}
 					currentProject={this.state.currentProject}
 					ref="projectList" />
+					</div>
 			</section>
 		)
 	}

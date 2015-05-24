@@ -4,28 +4,49 @@
 	overflow: hidden;
 	padding: 40px 20px;
 
-	.filters {
-		float: left;
-		width: 20%;
+	> div {
+		margin-top: 10px;
+	}
+
+	.project-title {
+		background: @deep-pink;
+		color: @white;
+		margin: 0 0 20px 20px;
+		&:after {
+			background: @deep-pink;
+		}
 	}
 
 	.project-list {
 		float: right;
 		width: 79%;
+
+		> div {
+			margin: 0 auto;
+		}
 	}
 
 	.project-row {
 		.flex-display();
+		.flex-wrap(wrap);
 	}
 
 	.project-tile {
 		.flex();
-		border: 1px solid #999;
+		background: @white;
 		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
 		cursor: pointer;
 		height: 250px;
 		margin: 10px;
-		overflow: hidden;
+		position: relative;
 		width: 250px;
+	}
+
+	.project-detail {
+		background: @white;
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
+		margin: 20px 10px;
+		padding: 20px;
+		width: 100%;
 	}
 }

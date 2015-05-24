@@ -3,7 +3,8 @@ var React = require('react'),
 		Arrow = require('./arrow'),
 		data = require('../../data.json'),
 		projectSize = 250,
-		projectMargin = 10;
+		projectMargin = 10,
+		containerSize;
 
 var ProjectList = React.createClass({
 	filterProjects: function(array) {
@@ -70,16 +71,23 @@ var ProjectList = React.createClass({
 		return arr3;
 	},
 	handleClick: function(id) {
-		for (var i = this.props.data.length - 1; i >= 0; i--) {
-			if (this.props.data[i].id === id) {
-				project = this.props.data[i];
-			}
-		};
-		this.props.onUserInput(id, project);
+		if (id == this.props.currentId) {
+			this.props.onUserInput(null, null);
+		} else {
+			for (var i = this.props.data.length - 1; i >= 0; i--) {
+				if (this.props.data[i].id === id) {
+					project = this.props.data[i];
+				}
+			};
+			this.props.onUserInput(id, project);
+		}
 	},
 	calcProjectsPerRow: function() {
-		var projectWidth = projectSize + (projectMargin * 2);
-		return Math.floor(this.props.componentWidth / projectWidth);
+		var projectWidth = projectSize + (projectMargin * 2),
+				perRow = Math.floor(this.props.componentWidth / projectWidth);
+		containerSize = projectWidth * perRow;
+
+		return perRow;
 	},
 	calcRows: function(array) {
 		var projectsPerRow = this.calcProjectsPerRow(),
@@ -96,7 +104,7 @@ var ProjectList = React.createClass({
 				count ++;
 			}
 		};
-		return rows;
+		return rows.reverse();
 	},
 	renderProject: function(project) {
 		var isCurrent = project.id === this.props.currentId;
@@ -129,9 +137,12 @@ var ProjectList = React.createClass({
 		}
 
 		var projects = this.calcRows(projectArray).map(this.renderRow);
+		var styles = {
+			width: containerSize
+		}
 		return (
 			<div className="project-list">
-				{projects}
+				<div style={styles}>{projects}</div>
 			</div>
 		)
 	}

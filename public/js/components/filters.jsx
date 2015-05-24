@@ -21,9 +21,12 @@ var FilterSkills = React.createClass({
 			)
 		});
 		return (
-			<ul className="filter-grp filter-skills">
-				{skills}
-			</ul>
+			<div className="filter-grp">
+				<h6>Filter by skill:</h6>
+				<ul className="filter-skills">
+					{skills}
+				</ul>
+			</div>
 		)
 	}
 });
@@ -48,9 +51,12 @@ var FilterBrands = React.createClass({
 			)
 		});
 		return (
-			<ul className="filter-grp filter-brands">
-				{brands}
-			</ul>
+			<div className="filter-grp">
+				<h6>Filter by brand:</h6>
+				<ul className="filter-brands">
+					{brands}
+				</ul>
+			</div>
 		)
 	}
 });
@@ -58,20 +64,23 @@ var FilterBrands = React.createClass({
 var FilterType = React.createClass({
 	render: function() {
 		return (
-			<ul className="filter-grp filter-type">
-				<li>
-					<input type="checkbox" name="filterProjects" id="filter-projects" />
-					<label htmlFor="filter-projects">Projects</label>
-				</li>
-				<li>
-					<input type="checkbox" name="filterLabs" id="filter-labs" />
-					<label htmlFor="filter-labs">Labs</label>
-				</li>
-				<li>
-					<input type="checkbox" name="filterAll" id="filter-all" />
-					<label htmlFor="filter-all">All</label>
-				</li>
-			</ul>
+			<div className="filter-grp">
+				<h6>Filter by type:</h6>
+				<ul className="filter-type">
+					<li>
+						<input type="checkbox" name="filterProjects" id="filter-projects" />
+						<label htmlFor="filter-projects">Projects</label>
+					</li>
+					<li>
+						<input type="checkbox" name="filterLabs" id="filter-labs" />
+						<label htmlFor="filter-labs">Labs</label>
+					</li>
+					<li>
+						<input type="checkbox" name="filterAll" id="filter-all" />
+						<label htmlFor="filter-all">All</label>
+					</li>
+				</ul>
+			</div>
 		)
 	}
 });

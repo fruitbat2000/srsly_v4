@@ -1,52 +1,46 @@
-.kitteh {
-	display: block;
-	position: relative;
-	width: 100%;
-	z-index: 0;
-}
-
-.intro-copy {
-	left: 40px;
-	position: absolute;
-	top: 40px;
-	width: 45%;
-	z-index: 1;
-}
-
-.skills-list {
-	display: inline;
-	li {
-		display: inline-block;
-		margin-right: 10px;
+#intro {
+	> figure {
+		padding-bottom: 56.5%;
+		position: relative;
+		width: 100%;
 	}
-}
+	.kitteh {
+		display: block;
+		position: absolute;
+		width: 100%;
+		z-index: 0;
+	}
 
-.intro-title {
-	background: @blue;
-	border-radius: 3px;
-	color: @white;
-	display: inline-block;
-	padding: 5px 10px;
-	&:after {
+	.intro-copy {
+		left: 40px;
+		position: absolute;
+		top: 40px;
+		width: 45%;
+		z-index: 1;
+	}
+
+	.skills-list {
+		display: inline;
+		li {
+			display: inline-block;
+			margin-right: 10px;
+		}
+	}
+
+	.intro-title {
 		background: @blue;
+		color: @white;
+		&:after {
+			background: @blue;
+		}
 	}
-}
 
-.intro-text {
-	margin-bottom: 40px;
-	p {
-		background: rgba(255,255,255,0.5);
-		border-radius: 3px;
-		padding: 10px;
-	}
-}
-
-.skills-container {
-	background: rgba(0,0,0,0.6);
-	border-radius: 3px;
-	color: @white;
-	padding: 10px;
-	> span {
-		margin-right: 10px;
+	.intro-text {
+		margin-bottom: 40px;
+		p {
+			background: rgba(255,255,255,0.5);
+			border-radius: 3px;
+			padding: 10px;
+		}
 	}
 }
