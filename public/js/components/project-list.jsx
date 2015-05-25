@@ -107,11 +107,12 @@ var ProjectList = React.createClass({
 		return rows.reverse();
 	},
 	renderProject: function(project) {
-		var isCurrent = project.id === this.props.currentId;
+		var isCurrent = project.id === this.props.currentId,
+				brand = 'brand-'+project.brand_code,
+				classString = 'project-tile '+brand;
 		return (
-				<div className="project-tile" key={project.id} onClick={this.handleClick.bind(this, project.id)}>
-					<h3>{project.title}</h3>
-					<span>{project.brand}</span>
+				<div className={classString} key={project.id} onClick={this.handleClick.bind(this, project.id)}>
+					<h4>{project.title}</h4>
 					{isCurrent ? <Arrow id={project.id} /> : null}
 				</div>
 			)

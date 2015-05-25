@@ -1,21 +1,47 @@
 #intro {
+	background: @light-grey;
+	position: relative;
+
 	> figure {
-		padding-bottom: 56.5%;
+		padding-bottom: 56.7%;
 		position: relative;
 		width: 100%;
 	}
+
+	svg {
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+
+		path {
+			animation: dash 2.5s linear forwards;
+			fill: none;
+			fill-rule: evenodd;
+			stroke: #666666;
+			stroke-width: 3;
+			stroke-linecap: round;
+			stroke-linejoin: miter;
+			stroke-miterlimit: 4;
+			stroke-opacity: 0;
+		}
+	}
+
 	.kitteh {
 		display: block;
+		height: 100%;
 		position: absolute;
 		width: 100%;
 		z-index: 0;
 	}
 
 	.intro-copy {
-		left: 40px;
+		height: 100%;
+		left: 0;
+		padding: 40px 0 40px 40px;
 		position: absolute;
-		top: 40px;
-		width: 45%;
+		top: 0;
+		width: 46%;
 		z-index: 1;
 	}
 
@@ -35,12 +61,40 @@
 		}
 	}
 
-	.intro-text {
-		margin-bottom: 40px;
-		p {
-			background: rgba(255,255,255,0.5);
-			border-radius: 3px;
-			padding: 10px;
+	p {
+		background: rgba(255,255,255,0.5);
+		border-radius: 3px;
+		padding: 10px;
+	}
+
+	.skills-container {
+		background: rgba(0,0,0,0.6);
+		border-radius: 3px;
+		bottom: 40px;
+		color: @white;
+		padding: 10px;
+		position: absolute;
+		> span {
+			margin-right: 10px;
+		}
+
+		@media only screen and (max-width: 1230px) {
+			display: none;
+		}
+	}
+
+	.kitteh,
+	.intro-text,
+	.skills-container {
+		.transition(~'opacity .3s linear .2s');
+		opacity: 0;
+	}
+
+	&.go {
+		.kitteh,
+		.intro-text,
+		.skills-container {
+			opacity: 1;
 		}
 	}
 }

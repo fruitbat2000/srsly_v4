@@ -27,6 +27,7 @@
       "title": "M&S Gift Finder",
       "desc": "Gift Finder was part of Marks & Spencer's Christmas 2014 activity and also my first commercial Angular project. I was the sole developer on the project so I architected everything from scratch (with a little help from Yeoman) and developed it end-to-end. It used a 3rd party API to collate appropriate gifts based on users' choices regarding the gift recipients and is fully responsive. The whole site was heavy on animation and video (lot's of flying, sparkling fairies!), so ensuring it was mobile friendly was a challenge.",
       "brand": "M&S",
+      "brand_code": "mands",
       "skills": ["HTML5", "CSS3", "Javascript", "Angular", "Grunt", "SASS", "API"],
       "labs": false
     },
@@ -35,6 +36,7 @@
       "title": "MINI Digital",
       "desc": "Whilst at AKQA, I was part of the team building the new MINI site. This was a huge project and also one of the first major projects in the world to use AEM6. I worked within a team of 20-30 developers producing reusable components that the website authors could place within the site's pages. AEM6 uses a templating system called Sightly which is HTML based and enables server-side JS models, so component development involved both server-side and client-side code. Many of the components also made use of a third party Angular service and we built our own Angular apps to integrate with it.",
       "brand": "MINI",
+      "brand_code": "mini",
       "skills": ["HTML5", "CSS3", "Javascript", "Angular", "AEM6", "Sightly", "LESS"],
       "labs": false
     },
@@ -43,6 +45,7 @@
       "title": "Toyota Test Drive",
       "desc": "Toyota asked Saatchi & Saatchi to help increase test drives of their Hybrid range, so we built a web app that would allow people to book a car to pick them up at work, take them on a test drive and then drop them back again. This was prior the launch of Uber, but the idea was similar - a map with real time tracking of nearby drivable Hybrids that you can book to come and get you within an hour. The app was built in Backbone on an Express server and used socketIO to update car positions via the Google Maps API. It was awesome, but sadly Toyota ran into legal issues in the final stages and it never launched.",
       "brand": "Toyota",
+      "brand_code": "toyota",
       "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "Node", "Express", "SocketIO", "LESS", "Grunt"],
       "labs": false
     },
@@ -51,72 +54,117 @@
       "title": "SRSLY v4",
       "desc": "Version 4 of the SRSLY website uses React for speedy rendering, good SEO and because I needed an excuse to teach it to myself. It's by no means perfect, but it's been a very educational journey ;). Aside from React, it uses LESS, and runs on a Node Express server for server-side rendering.",
       "brand": "SRSLY",
+      "brand_code": "srsly",
       "skills": ["HTML5", "CSS3", "Javascript", "React", "Webpack", "Grunt", "LESS", "Node", "Express"],
       "labs": true
     },
     {
       "id": "005",
-      "title": "SRSLY v3",
-      "brand": "SRSLY",
-      "desc": "This website was a bit of a sandbox project for me and allowed me to try out a whole host of technologies without an end  client to pander to. It's built as a single page JavaScript app using Backbone.js and Require JS. It uses Handlebars templates and Stylus CSS preprocessing and my development environment whilst building it was based on node.js with grunt to automate stuff. It's responsive and uses some fancy CSS3 transforms etc, which degrade gracefully (ish) in older browsers",
-      "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "Stylus", "Grunt", "Handlebars", "RequireJS"],
-      "labs": true
+      "title": "Saatchi & Saatchi website",
+      "desc": "Saatchi & Saatchi wanted to launch a new website that reflected their brand ideals whilst showing off their work. I came onto the project after most of the hard work was done, but still had the opportunity to get involved with a lot of the fiddly animation bits as well as some work with the Google Maps API and building a couple of templates.",
+      "brand": "Saatchi & Saatchi",
+      "brand_code": "saatchi",
+      "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "LESS", "Grunt", "PHP"],
+      "labs": false
     },
     {
       "id": "006",
-      "brand": "SRSLY Labs",
-      "title": "Amazon Author Tracker",
-      "desc": "This is VERY much a work in progress. It uses the Amazon API to find authors and then bookmark them for future reference. When finished it would then email users when one of their bookmarked authors had a new book out/on preorder. Unfortunately, the 'new releases' endpoint on the Amazon API only returns a limited number of results so there's no particularly efficient way of making this work. Hence why I never really finished it! However, it was a good introduction to the MEAN stack and the first time I'd used Angular and MongoDB, so it was still a useful exercise :)",
-      "skills": ["HTML5", "CSS3", "Javascript", "Angular", "Grunt", "MongoDB", "Node", "Express", "API"],
-      "labs": true
+      "title": "Lurpak Food Adventures",
+      "desc": "Food Adventures is a bit like Facebook, but for cooking - an ever-growing community of cooking enthusiasts who can follow/like their peers as well as submit photos of their latest cookery adventures. It was built upon the existing Lurpak Bake Club site, so much of the architecture already existed and this should have been a simple reskin. However, as always, scope crept and new content was added so there was some build involved in the end as well!",
+      "brand": "Lurpak",
+      "brand_code": "lurpak",
+      "skills": ["HTML5", "CSS3", "Javascript", "jQuery", "LESS", "PHP"],
+      "labs": false
     },
     {
       "id": "007",
       "title": "Xbox Emails",
       "desc": "Xbox have a massive global CRM programme in Europe covering 23 different markets and broadcasting to more than 8 million people. Each bespoke email is built using an XSLT template, allowing us to pass each locale's content through it via an XML document and generate HTML emails that can be broadcast from Exact Target. I had the dubious honour of being Technical Team Leader for the Xbox account, which meant having final sign-off of all emails prior to broadcast as well as overseeing one other developer.",
       "brand": "Xbox",
+      "brand_code": "xbox",
       "skills": ["HTML", "XSLT"],
       "labs": false
     },
     {
       "id": "008",
-      "title": "Check In Online",
-      "desc": "Check-in online is a major new addition to the booking process on the Premier Inn website. It allows users to avoid the hassle of checking-in when they arrive at the hotel whilst also prompting them to add meals and wifi etc to the their booking. I worked alongside a Senior Dev and was responsible for all the HTML and CSS development. The site uses some progressive enhancement techniques in regards to CSS3 styles and is designed to work in all browsers from ie6 upwards - lots of lovely cross-browser testing!",
-      "brand": "Premier Inn",
-      "skills": ["HTML5", "CSS3", "Javascript", "jQuery"],
-      "labs": false
+      "title": "SRSLY v3",
+      "brand": "SRSLY",
+      "brand_code": "srsly",
+      "desc": "This website was a bit of a sandbox project for me and allowed me to try out a whole host of technologies without an end  client to pander to. It's built as a single page JavaScript app using Backbone.js and Require JS. It uses Handlebars templates and Stylus CSS preprocessing and my development environment whilst building it was based on node.js with grunt to automate stuff. It's responsive and uses some fancy CSS3 transforms etc, which degrade gracefully (ish) in older browsers",
+      "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "Stylus", "Grunt", "Handlebars", "RequireJS"],
+      "labs": true
     },
     {
       "id": "009",
-      "title": "M&S Pass The Parcel",
-      "desc": "Pass the Parcel was a hugely popular app from Marks and Spencer that used Facebook integration to create a Christmas competition with a social twist. It was beautiful, but a nightmare to build responsively, especially with the extensive use of CSS sprite animation and video. We used plain 'ol javascript with a pub/sub architecture and Browserify for modular code. It was a single page app, with a database layer API as well as Facebook API integration and plenty of social sharing stuff.",
-      "brand": "M&S",
-      "skills": ["HTML5", "CSS3", "Javascript", "jQuery", "Browserify", "SASS", "Grunt"],
-      "labs": false
-    },
-    {
-      "id": "010",
       "title": "Nivea Model Lips",
       "desc": "The Model Lip campaign was a competition to find the new face of Nivea Lip Salve. We asked people to submit photos using a unique hastag and then displayed them on the site to be voted for by the public. We encouraged them to share with their friends so social sharing was a prominent feature. The site is built using JS, a bit of PHP (which I didn't write!), RequireJS, Handlebars, SASS and Grunt. We used a third party service to aggregate the UGC, as this provided us a with a way to pre-moderate submissions - no naughty lips pics for us!",
       "brand": "Nivea",
+      "brand_code": "nivea",
       "skills": ["HTML5", "CSS3", "Javascript", "RequireJS", "SASS", "Grunt", "Handlebars"],
       "labs": false
     },
     {
+      "id": "010",
+      "title": "Candyland",
+      "desc": "Candyland looks and feels like a Flash site - very heavy on the animation, non-traditional navigation etc - but it's built entirely in HTML5 and JS (Backbone) with CSS3 animation. Much of the animation work was done by designers in Adobe Edge and then integrated into the code, although some of the simpler movement were coded directly. The biggest challenge was actually making the site responsive as the layout really didn't lend itself to mobile/tablet at all. I think we may actually have won an award or two for this one :)",
+      "brand": "Candyland",
+      "brand_code": "candy",
+      "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "LESS", "Grunt"],
+      "labs": false
+    },
+    {
       "id": "011",
+      "title": "Check In Online",
+      "desc": "Check-in online is a major new addition to the booking process on the Premier Inn website. It allows users to avoid the hassle of checking-in when they arrive at the hotel whilst also prompting them to add meals and wifi etc to the their booking. I worked alongside a Senior Dev and was responsible for all the HTML and CSS development. The site uses some progressive enhancement techniques in regards to CSS3 styles and is designed to work in all browsers from ie6 upwards - lots of lovely cross-browser testing!",
+      "brand": "Premier Inn",
+      "brand_code": "prem",
+      "skills": ["HTML5", "CSS3", "Javascript", "jQuery"],
+      "labs": false
+    },
+    {
+      "id": "012",
+      "title": "M&S Pass The Parcel",
+      "desc": "Pass the Parcel was a hugely popular app from Marks and Spencer that used Facebook integration to create a Christmas competition with a social twist. It was beautiful, but a nightmare to build responsively, especially with the extensive use of CSS sprite animation and video. We used plain 'ol javascript with a pub/sub architecture and Browserify for modular code. It was a single page app, with a database layer API as well as Facebook API integration and plenty of social sharing stuff.",
+      "brand": "M&S",
+      "brand_code": "mands",
+      "skills": ["HTML5", "CSS3", "Javascript", "jQuery", "Browserify", "SASS", "Grunt"],
+      "labs": false
+    },
+    {
+      "id": "013",
       "title": "AltoStratus",
       "desc": "Altostratus is my attempt to build a fully fetured music player using the Dropbox API for music storage. It's not finished and was one of my first Backbone projects so definitely requires some refactoring, but given my lack of experience at the time it's a fairly good effort! It pulls file data from the user's Dropbox to populate albums/songs and then streams selected songs via a HTML5 audio element. It uses Backbone, LESS and Handlebars to do the magic.",
       "brand": "SRSLY Labs",
+      "brand_code": "labs",
       "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "LESS", "Grunt", "API", "Handlebars"],
       "labs": true
     },
     {
-      "id": "012",
+      "id": "014",
       "title": "Colgate Review Center",
       "desc": "The Colgate Review Centre is a single page JS app that allows customers to leave a review for Colgate products. It makes heavy use of the BazaarVoice API - a 3rd party product reviews service - to populate the product list and product details etc. The site is built in javascript/jQuery using RequireJS to manage AMD dependencies and grunt for automation. Templating is handled by handlebars and CSS is pre-processed using Stylus. It's also responsive and has a very different user journey on mobile.",
       "brand": "Colgate",
+      "brand_code": "colgate",
       "skills": ["HTML5", "CSS3", "Javascript", "Stylus", "Grunt", "API", "Handlebars"],
       "labs": false
+    },
+    {
+      "id": "015",
+      "title": "Lurpak.co.uk Redesign",
+      "desc": "To coincide with the launch of their Cook's Range products, Lurpak decided to redesign key areas of their site to promote the new range. This included a new homepage design (complete with subtly animated food!) and new product pages etc. The site already used a lot of page transitions and animations and the new designs didn't fit particularly well with the existing architecture so the challenge was to keep existing content and page transitions working whilst still being able to add the new look content.",
+      "brand": "Lurpak",
+      "brand_code": "lurpak",
+      "skills": ["HTML5", "CSS3", "Javascript", "jQuery", "LESS", "PHP", "CMS"],
+      "labs": false
+    },
+    {
+      "id": "016",
+      "brand": "SRSLY Labs",
+      "title": "Amazon Author Tracker",
+      "brand_code": "labs",
+      "desc": "This is VERY much a work in progress. It uses the Amazon API to find authors and then bookmark them for future reference. When finished it would then email users when one of their bookmarked authors had a new book out/on preorder. Unfortunately, the 'new releases' endpoint on the Amazon API only returns a limited number of results so there's no particularly efficient way of making this work. Hence why I never really finished it! However, it was a good introduction to the MEAN stack and the first time I'd used Angular and MongoDB, so it was still a useful exercise :)",
+      "skills": ["HTML5", "CSS3", "Javascript", "Angular", "Grunt", "MongoDB", "Node", "Express", "API"],
+      "labs": true
     }
   ],
   "navItems": [
@@ -133,6 +181,9 @@
     "Nivea",
     "Colgate",
     "Premier Inn",
-    "XBOX"
+    "XBOX",
+    "Lurpak",
+    "Candyland",
+    "Saatchi & Saatchi"
   ]
 }

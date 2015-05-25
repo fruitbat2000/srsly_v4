@@ -92,7 +92,6 @@ var Filters = React.createClass({
 	render: function() {
 		return (
 			<aside className="filters">
-				<FilterType />
 				<FilterSkills onUserInput={this.handleUserInput} data={data.skills} />
 				<FilterBrands onUserInput={this.handleUserInput} data={data.brands} />
 			</aside>
