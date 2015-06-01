@@ -66,4 +66,35 @@
 		padding: 20px;
 		width: 100%;
 	}
+
+	.project-img {
+		.flex-display();
+		.flex-direction(column);
+		.justify-content(center);
+		float: left;
+		width: 55%;
+
+		img {
+			.flex();
+			width: 90%;
+		}
+	}
+
+	.project-desc {
+		float: right;
+		width: 44%;
+
+		ul {
+			background: rgba(0,0,0,0.6);
+			border-radius: 3px;
+			margin-top: 20px;
+			padding: 10px;
+		}
+
+		li {
+			color: @white;
+			display: inline-block;
+			margin-right: 10px;
+		}
+	}
 }

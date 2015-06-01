@@ -28,6 +28,7 @@
       "desc": "Gift Finder was part of Marks & Spencer's Christmas 2014 activity and also my first commercial Angular project. I was the sole developer on the project so I architected everything from scratch (with a little help from Yeoman) and developed it end-to-end. It used a 3rd party API to collate appropriate gifts based on users' choices regarding the gift recipients and is fully responsive. The whole site was heavy on animation and video (lot's of flying, sparkling fairies!), so ensuring it was mobile friendly was a challenge.",
       "brand": "M&S",
       "brand_code": "mands",
+      "images": ["giftfinder.png"],
       "skills": ["HTML5", "CSS3", "Javascript", "Angular", "Grunt", "SASS", "API"],
       "labs": false
     },
@@ -46,6 +47,7 @@
       "desc": "Toyota asked Saatchi & Saatchi to help increase test drives of their Hybrid range, so we built a web app that would allow people to book a car to pick them up at work, take them on a test drive and then drop them back again. This was prior the launch of Uber, but the idea was similar - a map with real time tracking of nearby drivable Hybrids that you can book to come and get you within an hour. The app was built in Backbone on an Express server and used socketIO to update car positions via the Google Maps API. It was awesome, but sadly Toyota ran into legal issues in the final stages and it never launched.",
       "brand": "Toyota",
       "brand_code": "toyota",
+      "images": ["toyota.png"],
       "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "Node", "Express", "SocketIO", "LESS", "Grunt"],
       "labs": false
     },
@@ -90,6 +92,7 @@
       "title": "SRSLY v3",
       "brand": "SRSLY",
       "brand_code": "srsly",
+      "images": ["srslyv3.png"],
       "desc": "This website was a bit of a sandbox project for me and allowed me to try out a whole host of technologies without an end  client to pander to. It's built as a single page JavaScript app using Backbone.js and Require JS. It uses Handlebars templates and Stylus CSS preprocessing and my development environment whilst building it was based on node.js with grunt to automate stuff. It's responsive and uses some fancy CSS3 transforms etc, which degrade gracefully (ish) in older browsers",
       "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "Stylus", "Grunt", "Handlebars", "RequireJS"],
       "labs": true
@@ -100,6 +103,7 @@
       "desc": "The Model Lip campaign was a competition to find the new face of Nivea Lip Salve. We asked people to submit photos using a unique hastag and then displayed them on the site to be voted for by the public. We encouraged them to share with their friends so social sharing was a prominent feature. The site is built using JS, a bit of PHP (which I didn't write!), RequireJS, Handlebars, SASS and Grunt. We used a third party service to aggregate the UGC, as this provided us a with a way to pre-moderate submissions - no naughty lips pics for us!",
       "brand": "Nivea",
       "brand_code": "nivea",
+      "images": ["niveaLip.png"],
       "skills": ["HTML5", "CSS3", "Javascript", "RequireJS", "SASS", "Grunt", "Handlebars"],
       "labs": false
     },
@@ -118,6 +122,7 @@
       "desc": "Check-in online is a major new addition to the booking process on the Premier Inn website. It allows users to avoid the hassle of checking-in when they arrive at the hotel whilst also prompting them to add meals and wifi etc to the their booking. I worked alongside a Senior Dev and was responsible for all the HTML and CSS development. The site uses some progressive enhancement techniques in regards to CSS3 styles and is designed to work in all browsers from ie6 upwards - lots of lovely cross-browser testing!",
       "brand": "Premier Inn",
       "brand_code": "prem",
+      "images": ["ciol.png"],
       "skills": ["HTML5", "CSS3", "Javascript", "jQuery"],
       "labs": false
     },
@@ -127,6 +132,7 @@
       "desc": "Pass the Parcel was a hugely popular app from Marks and Spencer that used Facebook integration to create a Christmas competition with a social twist. It was beautiful, but a nightmare to build responsively, especially with the extensive use of CSS sprite animation and video. We used plain 'ol javascript with a pub/sub architecture and Browserify for modular code. It was a single page app, with a database layer API as well as Facebook API integration and plenty of social sharing stuff.",
       "brand": "M&S",
       "brand_code": "mands",
+      "images": ["ptp.png"],
       "skills": ["HTML5", "CSS3", "Javascript", "jQuery", "Browserify", "SASS", "Grunt"],
       "labs": false
     },
@@ -145,6 +151,7 @@
       "desc": "The Colgate Review Centre is a single page JS app that allows customers to leave a review for Colgate products. It makes heavy use of the BazaarVoice API - a 3rd party product reviews service - to populate the product list and product details etc. The site is built in javascript/jQuery using RequireJS to manage AMD dependencies and grunt for automation. Templating is handled by handlebars and CSS is pre-processed using Stylus. It's also responsive and has a very different user journey on mobile.",
       "brand": "Colgate",
       "brand_code": "colgate",
+      "images": ["colgateRC.png"],
       "skills": ["HTML5", "CSS3", "Javascript", "Stylus", "Grunt", "API", "Handlebars"],
       "labs": false
     },
