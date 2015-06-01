@@ -71,7 +71,7 @@ var ProjectList = React.createClass({
 		return arr3;
 	},
 	handleClick: function(id) {
-		if (id == this.props.currentId) {
+		if (id === this.props.currentId) {
 			this.props.onUserInput(null, null);
 		} else {
 			for (var i = this.props.data.length - 1; i >= 0; i--) {
