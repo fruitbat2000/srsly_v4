@@ -1,25 +1,22 @@
 var React = require('react'),
-		data = require('../../data.json');
+		data = require('../../data.json'),
+		$el;
 
 var ProjectDetail = React.createClass({
 	getInitialState: function() {
 		return {
-			styles: {
-				height: 'auto'
-			}
+			figureHeight: 0,
+			height: 0,
+			animate: false
 		}
 	},
 	componentDidMount: function() {
-		var self = this,
-				$el = $(React.findDOMNode(this.refs.projectDetail)),
-				img = React.findDOMNode(this.refs.projectDetailImg),
+		$el = $(React.findDOMNode(this.refs.projectDetail));
+
+		var img = React.findDOMNode(this.refs.projectDetailImg),
 				$container = $el.parents('#projects');
 
-		this.setState({
-			styles: {
-				height: $el.height()
-			}
-		});
+		this.setHeight();
 
 		img.addEventListener('load', function(){
 			var vibrant = new Vibrant(img, 64, 5),
@@ -29,7 +26,24 @@ var ProjectDetail = React.createClass({
 
 			$container.css('background-color', bg);
 		});
+	},
+	componentWillReceiveProps: function() {
+		this.setState({animate: true});
+	},
+	componentDidUpdate: function() {
+		if (this.state.animate) {
+			this.setHeight();
+			this.setState({animate: false});
+		}
+	},
+	setHeight: function() {
+		var figureHeight = $el.find('.project-desc').outerHeight(),
+				height = figureHeight + 40;
 
+		this.setState({
+			figureHeight: figureHeight,
+			height: height
+		});
 	},
 	render: function() {
 		var project = this.props.project,
@@ -46,8 +60,8 @@ var ProjectDetail = React.createClass({
 			)
 		});
 		return (
-			<div className="project-detail" ref="projectDetail">
-				<figure className="project-img" style={this.state.styles}>
+			<div className="project-detail" ref="projectDetail" style={{height: this.state.height}}>
+				<figure className="project-img" style={{height: this.state.figureHeight}}>
 					<img src={imgSrc} alt={project.title} ref="projectDetailImg" />
 				</figure>
 				<div className="project-desc">

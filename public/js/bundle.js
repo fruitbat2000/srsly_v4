@@ -2389,9 +2389,9 @@
 	var ReactPropTypeLocations = __webpack_require__(44);
 	var ReactPropTypeLocationNames = __webpack_require__(45);
 	var ReactCurrentOwner = __webpack_require__(13);
-	var ReactNativeComponent = __webpack_require__(50);
+	var ReactNativeComponent = __webpack_require__(49);
 
-	var getIteratorFn = __webpack_require__(51);
+	var getIteratorFn = __webpack_require__(50);
 	var invariant = __webpack_require__(35);
 	var warning = __webpack_require__(39);
 
@@ -2849,7 +2849,7 @@
 	var ReactElement = __webpack_require__(14);
 	var ReactElementValidator = __webpack_require__(15);
 
-	var mapObject = __webpack_require__(49);
+	var mapObject = __webpack_require__(51);
 
 	/**
 	 * Create a factory that creates HTML tag elements.
@@ -6589,7 +6589,7 @@
 	var ReactFragment = __webpack_require__(37);
 	var ReactInstanceHandles = __webpack_require__(19);
 
-	var getIteratorFn = __webpack_require__(51);
+	var getIteratorFn = __webpack_require__(50);
 	var invariant = __webpack_require__(35);
 	var warning = __webpack_require__(39);
 
@@ -7510,63 +7510,6 @@
 /* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule mapObject
-	 */
-
-	'use strict';
-
-	var hasOwnProperty = Object.prototype.hasOwnProperty;
-
-	/**
-	 * Executes the provided `callback` once for each enumerable own property in the
-	 * object and constructs a new object from the results. The `callback` is
-	 * invoked with three arguments:
-	 *
-	 *  - the property value
-	 *  - the property name
-	 *  - the object being traversed
-	 *
-	 * Properties that are added after the call to `mapObject` will not be visited
-	 * by `callback`. If the values of existing properties are changed, the value
-	 * passed to `callback` will be the value at the time `mapObject` visits them.
-	 * Properties that are deleted before being visited are not visited.
-	 *
-	 * @grep function objectMap()
-	 * @grep function objMap()
-	 *
-	 * @param {?object} object
-	 * @param {function} callback
-	 * @param {*} context
-	 * @return {?object}
-	 */
-	function mapObject(object, callback, context) {
-	  if (!object) {
-	    return null;
-	  }
-	  var result = {};
-	  for (var name in object) {
-	    if (hasOwnProperty.call(object, name)) {
-	      result[name] = callback.call(context, object[name], name, object);
-	    }
-	  }
-	  return result;
-	}
-
-	module.exports = mapObject;
-
-
-/***/ },
-/* 50 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2014-2015, Facebook, Inc.
 	 * All rights reserved.
@@ -7674,7 +7617,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 51 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -7719,6 +7662,63 @@
 	}
 
 	module.exports = getIteratorFn;
+
+
+/***/ },
+/* 51 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule mapObject
+	 */
+
+	'use strict';
+
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+	/**
+	 * Executes the provided `callback` once for each enumerable own property in the
+	 * object and constructs a new object from the results. The `callback` is
+	 * invoked with three arguments:
+	 *
+	 *  - the property value
+	 *  - the property name
+	 *  - the object being traversed
+	 *
+	 * Properties that are added after the call to `mapObject` will not be visited
+	 * by `callback`. If the values of existing properties are changed, the value
+	 * passed to `callback` will be the value at the time `mapObject` visits them.
+	 * Properties that are deleted before being visited are not visited.
+	 *
+	 * @grep function objectMap()
+	 * @grep function objMap()
+	 *
+	 * @param {?object} object
+	 * @param {function} callback
+	 * @param {*} context
+	 * @return {?object}
+	 */
+	function mapObject(object, callback, context) {
+	  if (!object) {
+	    return null;
+	  }
+	  var result = {};
+	  for (var name in object) {
+	    if (hasOwnProperty.call(object, name)) {
+	      result[name] = callback.call(context, object[name], name, object);
+	    }
+	  }
+	  return result;
+	}
+
+	module.exports = mapObject;
 
 
 /***/ },
@@ -11173,7 +11173,7 @@
 	var ReactClass = __webpack_require__(11);
 	var ReactEmptyComponent = __webpack_require__(86);
 	var ReactBrowserEventEmitter = __webpack_require__(85);
-	var ReactNativeComponent = __webpack_require__(50);
+	var ReactNativeComponent = __webpack_require__(49);
 	var ReactDOMComponent = __webpack_require__(54);
 	var ReactPerf = __webpack_require__(21);
 	var ReactRootIndex = __webpack_require__(83);
@@ -13708,7 +13708,7 @@
 
 	var ReactCompositeComponent = __webpack_require__(141);
 	var ReactEmptyComponent = __webpack_require__(86);
-	var ReactNativeComponent = __webpack_require__(50);
+	var ReactNativeComponent = __webpack_require__(49);
 
 	var assign = __webpack_require__(25);
 	var invariant = __webpack_require__(35);
@@ -14295,27 +14295,24 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-			data = __webpack_require__(33);
+			data = __webpack_require__(33),
+			$el;
 
 	var ProjectDetail = React.createClass({displayName: "ProjectDetail",
 		getInitialState: function() {
 			return {
-				styles: {
-					height: 'auto'
-				}
+				figureHeight: 0,
+				height: 0,
+				animate: false
 			}
 		},
 		componentDidMount: function() {
-			var self = this,
-					$el = $(React.findDOMNode(this.refs.projectDetail)),
-					img = React.findDOMNode(this.refs.projectDetailImg),
+			$el = $(React.findDOMNode(this.refs.projectDetail));
+
+			var img = React.findDOMNode(this.refs.projectDetailImg),
 					$container = $el.parents('#projects');
 
-			this.setState({
-				styles: {
-					height: $el.height()
-				}
-			});
+			this.setHeight();
 
 			img.addEventListener('load', function(){
 				var vibrant = new Vibrant(img, 64, 5),
@@ -14325,7 +14322,24 @@
 
 				$container.css('background-color', bg);
 			});
+		},
+		componentWillReceiveProps: function() {
+			this.setState({animate: true});
+		},
+		componentDidUpdate: function() {
+			if (this.state.animate) {
+				this.setHeight();
+				this.setState({animate: false});
+			}
+		},
+		setHeight: function() {
+			var figureHeight = $el.find('.project-desc').outerHeight(),
+					height = figureHeight + 40;
 
+			this.setState({
+				figureHeight: figureHeight,
+				height: height
+			});
 		},
 		render: function() {
 			var project = this.props.project,
@@ -14342,8 +14356,8 @@
 				)
 			});
 			return (
-				React.createElement("div", {className: "project-detail", ref: "projectDetail"}, 
-					React.createElement("figure", {className: "project-img", style: this.state.styles}, 
+				React.createElement("div", {className: "project-detail", ref: "projectDetail", style: {height: this.state.height}}, 
+					React.createElement("figure", {className: "project-img", style: {height: this.state.figureHeight}}, 
 						React.createElement("img", {src: imgSrc, alt: project.title, ref: "projectDetailImg"})
 					), 
 					React.createElement("div", {className: "project-desc"}, 
@@ -18446,7 +18460,7 @@
 	var ReactElementValidator = __webpack_require__(15);
 	var ReactInstanceMap = __webpack_require__(42);
 	var ReactLifeCycle = __webpack_require__(43);
-	var ReactNativeComponent = __webpack_require__(50);
+	var ReactNativeComponent = __webpack_require__(49);
 	var ReactPerf = __webpack_require__(21);
 	var ReactPropTypeLocations = __webpack_require__(44);
 	var ReactPropTypeLocationNames = __webpack_require__(45);
