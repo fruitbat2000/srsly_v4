@@ -61,7 +61,7 @@ var ProjectDetail = React.createClass({
 		});
 		return (
 			<div className="project-detail" ref="projectDetail" style={{height: this.state.height}}>
-				<figure className="project-img" style={{height: this.state.figureHeight}}>
+				<figure className="project-img" style={{minHeight: this.state.figureHeight}}>
 					<img src={imgSrc} alt={project.title} ref="projectDetailImg" />
 				</figure>
 				<div className="project-desc">
