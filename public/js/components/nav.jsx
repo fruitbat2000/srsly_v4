@@ -28,11 +28,36 @@ var NavList = React.createClass({
 });
 
 var Nav = React.createClass({
+	getInitialState: function() {
+		return {
+			el: null,
+			offset: null
+		}
+	},
+	fixNav: function() {
+		if (window.pageYOffset > this.state.offset) {
+			this.state.el.css('position', 'fixed');
+		} else {
+			this.state.el.css('position', 'relative');
+		}
+	},
+	componentDidMount: function() {
+		this.setState({
+			el: $(React.findDOMNode(this.refs.nav)),
+			offset: $(React.findDOMNode(this.refs.nav)).offset().top
+		});
+		$(window).on('scroll', this.fixNav);
+	},
+	componentWillUnmount: function() {
+		$(window).off('scroll', this.fixNav);
+	},
 	render: function() {
 		return (
-			<nav>
-				<NavList data={data.navItems} />
-			</nav>
+			<div className="nav-container">
+				<nav ref="nav">
+					<NavList data={data.navItems} />
+				</nav>
+			</div>
 		);
 	}
 });
