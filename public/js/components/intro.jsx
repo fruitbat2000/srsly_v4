@@ -4,16 +4,16 @@ var React = require('react'),
 var Intro = React.createClass({
 	getInitialState: function() {
 		return {
-			parallaxEl: null,
-			linesHeight: null
+			$parallax: null,
+			$lines: null
 		}
 	},
 	setHeight: function() {
-		this.state.parallaxEl.height(this.state.linesHeight);
+		this.state.$parallax.height(this.state.$lines.height());
 	},
 	parallax: function(e) {
 		var scrollTop = window.pageYOffset,
-				$el = this.state.parallaxEl,
+				$el = this.state.$parallax,
 				newTop = -scrollTop * .5 + 'px';
 
 		window.requestAnimationFrame(function(){
@@ -26,8 +26,8 @@ var Intro = React.createClass({
 				$container = $el.parents('#intro');
 
 		this.setState({
-			parallaxEl: $container.find('.parallax'),
-			linesHeight: $el.height()
+			$parallax: $container.find('.parallax'),
+			$lines: $el
 		}, this.setHeight);
 
 		$paths.each(function (i) {

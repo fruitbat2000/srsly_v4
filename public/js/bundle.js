@@ -254,16 +254,16 @@
 	var Intro = React.createClass({displayName: "Intro",
 		getInitialState: function() {
 			return {
-				parallaxEl: null,
-				linesHeight: null
+				$parallax: null,
+				$lines: null
 			}
 		},
 		setHeight: function() {
-			this.state.parallaxEl.height(this.state.linesHeight);
+			this.state.$parallax.height(this.state.$lines.height());
 		},
 		parallax: function(e) {
 			var scrollTop = window.pageYOffset,
-					$el = this.state.parallaxEl,
+					$el = this.state.$parallax,
 					newTop = -scrollTop * .5 + 'px';
 
 			window.requestAnimationFrame(function(){
@@ -276,8 +276,8 @@
 					$container = $el.parents('#intro');
 
 			this.setState({
-				parallaxEl: $container.find('.parallax'),
-				linesHeight: $el.height()
+				$parallax: $container.find('.parallax'),
+				$lines: $el
 			}, this.setHeight);
 
 			$paths.each(function (i) {
@@ -10026,7 +10026,7 @@
 	'use strict';
 
 	var ReactUpdates = __webpack_require__(88);
-	var Transaction = __webpack_require__(112);
+	var Transaction = __webpack_require__(113);
 
 	var assign = __webpack_require__(25);
 	var emptyFunction = __webpack_require__(94);
@@ -10102,7 +10102,7 @@
 
 	'use strict';
 
-	var AutoFocusMixin = __webpack_require__(114);
+	var AutoFocusMixin = __webpack_require__(112);
 	var ReactBrowserComponentMixin = __webpack_require__(63);
 	var ReactClass = __webpack_require__(11);
 	var ReactElement = __webpack_require__(14);
@@ -10171,7 +10171,7 @@
 	'use strict';
 
 	var EventConstants = __webpack_require__(34);
-	var LocalEventTrapMixin = __webpack_require__(113);
+	var LocalEventTrapMixin = __webpack_require__(114);
 	var ReactBrowserComponentMixin = __webpack_require__(63);
 	var ReactClass = __webpack_require__(11);
 	var ReactElement = __webpack_require__(14);
@@ -10224,7 +10224,7 @@
 	'use strict';
 
 	var EventConstants = __webpack_require__(34);
-	var LocalEventTrapMixin = __webpack_require__(113);
+	var LocalEventTrapMixin = __webpack_require__(114);
 	var ReactBrowserComponentMixin = __webpack_require__(63);
 	var ReactClass = __webpack_require__(11);
 	var ReactElement = __webpack_require__(14);
@@ -10445,7 +10445,7 @@
 	'use strict';
 
 	var EventConstants = __webpack_require__(34);
-	var LocalEventTrapMixin = __webpack_require__(113);
+	var LocalEventTrapMixin = __webpack_require__(114);
 	var ReactBrowserComponentMixin = __webpack_require__(63);
 	var ReactClass = __webpack_require__(11);
 	var ReactElement = __webpack_require__(14);
@@ -10493,7 +10493,7 @@
 
 	'use strict';
 
-	var AutoFocusMixin = __webpack_require__(114);
+	var AutoFocusMixin = __webpack_require__(112);
 	var DOMPropertyOperations = __webpack_require__(52);
 	var LinkedValueUtils = __webpack_require__(116);
 	var ReactBrowserComponentMixin = __webpack_require__(63);
@@ -10728,7 +10728,7 @@
 
 	'use strict';
 
-	var AutoFocusMixin = __webpack_require__(114);
+	var AutoFocusMixin = __webpack_require__(112);
 	var LinkedValueUtils = __webpack_require__(116);
 	var ReactBrowserComponentMixin = __webpack_require__(63);
 	var ReactClass = __webpack_require__(11);
@@ -10910,7 +10910,7 @@
 
 	'use strict';
 
-	var AutoFocusMixin = __webpack_require__(114);
+	var AutoFocusMixin = __webpack_require__(112);
 	var DOMPropertyOperations = __webpack_require__(52);
 	var LinkedValueUtils = __webpack_require__(116);
 	var ReactBrowserComponentMixin = __webpack_require__(63);
@@ -11292,7 +11292,7 @@
 	var ReactBrowserEventEmitter = __webpack_require__(85);
 	var ReactInputSelection = __webpack_require__(122);
 	var ReactPutListenerQueue = __webpack_require__(123);
-	var Transaction = __webpack_require__(112);
+	var Transaction = __webpack_require__(113);
 
 	var assign = __webpack_require__(25);
 
@@ -13411,7 +13411,7 @@
 	var ReactCurrentOwner = __webpack_require__(13);
 	var ReactPerf = __webpack_require__(21);
 	var ReactReconciler = __webpack_require__(23);
-	var Transaction = __webpack_require__(112);
+	var Transaction = __webpack_require__(113);
 
 	var assign = __webpack_require__(25);
 	var invariant = __webpack_require__(35);
@@ -14236,7 +14236,7 @@
 	var PooledClass = __webpack_require__(36);
 	var CallbackQueue = __webpack_require__(121);
 	var ReactPutListenerQueue = __webpack_require__(123);
-	var Transaction = __webpack_require__(112);
+	var Transaction = __webpack_require__(113);
 
 	var assign = __webpack_require__(25);
 	var emptyFunction = __webpack_require__(94);
@@ -16115,6 +16115,37 @@
 /* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule AutoFocusMixin
+	 * @typechecks static-only
+	 */
+
+	'use strict';
+
+	var focusNode = __webpack_require__(154);
+
+	var AutoFocusMixin = {
+	  componentDidMount: function() {
+	    if (this.props.autoFocus) {
+	      focusNode(this.getDOMNode());
+	    }
+	  }
+	};
+
+	module.exports = AutoFocusMixin;
+
+
+/***/ },
+/* 113 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-2015, Facebook, Inc.
 	 * All rights reserved.
@@ -16356,7 +16387,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 113 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -16414,37 +16445,6 @@
 	module.exports = LocalEventTrapMixin;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
-
-/***/ },
-/* 114 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule AutoFocusMixin
-	 * @typechecks static-only
-	 */
-
-	'use strict';
-
-	var focusNode = __webpack_require__(154);
-
-	var AutoFocusMixin = {
-	  componentDidMount: function() {
-	    if (this.props.autoFocus) {
-	      focusNode(this.getDOMNode());
-	    }
-	  }
-	};
-
-	module.exports = AutoFocusMixin;
-
 
 /***/ },
 /* 115 */
