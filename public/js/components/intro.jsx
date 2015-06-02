@@ -2,9 +2,18 @@ var React = require('react'),
 		Skills = require('./skills');
 
 var Intro = React.createClass({
+	getInitialState: function() {
+		return {
+			parallaxEl: null,
+			linesHeight: null
+		}
+	},
+	setHeight: function() {
+		this.state.parallaxEl.height(this.state.linesHeight);
+	},
 	parallax: function(e) {
 		var scrollTop = window.pageYOffset,
-				$el = e.data.element,
+				$el = this.state.parallaxEl,
 				newTop = -scrollTop * .5 + 'px';
 
 		window.requestAnimationFrame(function(){
@@ -14,11 +23,12 @@ var Intro = React.createClass({
 	componentDidMount: function() {
 		var $el = $(React.findDOMNode(this.refs.kittenLines)),
 				$paths = $el.find('path'),
-				$container = $el.parents('#intro'),
-				$parallax = $container.find('.parallax'),
-				self = this;
+				$container = $el.parents('#intro');
 
-		$parallax.height($el.height());
+		this.setState({
+			parallaxEl: $container.find('.parallax'),
+			linesHeight: $el.height()
+		}, this.setHeight);
 
 		$paths.each(function (i) {
 			var length = this.getTotalLength();
@@ -29,10 +39,12 @@ var Intro = React.createClass({
 			$container.addClass('go');
 		}, 2500);
 
-		$(window).on('scroll', {element: $parallax}, this.parallax);
+		$(window).on('scroll', this.parallax);
+		$(window).on('resize', this.setHeight);
 	},
 	componentWillUnmount: function() {
 		$(window).off('scroll', this.parallax);
+		$(window).off('resize', this.setHeight);
 	},
 	render: function() {
 		return (
