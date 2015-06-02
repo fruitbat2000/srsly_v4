@@ -5,9 +5,9 @@ module.exports = function(grunt) {
 
     //jshint config
     jshint: {
-      files: ['public/js/**/*.js'],
-      ignores: ['public/js/bundle.js'],
+      files: ['public/js/**/*.js', '!public/js/libs/*.js'],
       options: {
+        ignores: ['public/js/bundle.js'],
         globals: {
           jQuery: true,
           console:true

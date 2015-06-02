@@ -5,4 +5,6 @@ if (typeof window !== "undefined") {
   window.onload = function() {
     React.render(App(), document.getElementById("content"));
   };
+
+  window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function(f){setTimeout(f, 1000/60);};
 }

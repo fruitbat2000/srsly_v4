@@ -53,19 +53,21 @@ var Projects = React.createClass({
 	render: function() {
 		return (
 			<section id="projects">
-				<h3 className="project-title skew">Projects</h3>
-				<div>
-				<Filters onUserInput={this.handleFilters} />
-				<ProjectList
-					data={this.state.data}
-					skillFilters={this.state.skillFilters}
-					brandFilters={this.state.brandFilters}
-					componentWidth={this.state.componentWidth}
-					onUserInput={this.handleSelection}
-					currentId={this.state.currentId}
-					currentProject={this.state.currentProject}
-					ref="projectList" />
-					</div>
+				<div className="colour-mask">
+					<h3 className="project-title skew">Projects</h3>
+					<div>
+					<Filters onUserInput={this.handleFilters} />
+					<ProjectList
+						data={this.state.data}
+						skillFilters={this.state.skillFilters}
+						brandFilters={this.state.brandFilters}
+						componentWidth={this.state.componentWidth}
+						onUserInput={this.handleSelection}
+						currentId={this.state.currentId}
+						currentProject={this.state.currentProject}
+						ref="projectList" />
+						</div>
+				</div>
 			</section>
 		)
 	}

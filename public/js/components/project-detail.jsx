@@ -14,7 +14,7 @@ var ProjectDetail = React.createClass({
 		$el = $(React.findDOMNode(this.refs.projectDetail));
 
 		var img = React.findDOMNode(this.refs.projectDetailImg),
-				$container = $el.parents('#projects');
+				$container = $el.parents('.colour-mask');
 
 		this.setHeight();
 
