@@ -41,15 +41,20 @@ var Nav = React.createClass({
 			this.state.el.css('position', 'relative');
 		}
 	},
-	componentDidMount: function() {
+	updateOffset: function() {
 		this.setState({
 			el: $(React.findDOMNode(this.refs.nav)),
 			offset: $(React.findDOMNode(this.refs.nav)).offset().top
 		});
+	},
+	componentDidMount: function() {
+		this.updateOffset();
 		$(window).on('scroll', this.fixNav);
+		$(window).on('resize', this.updateOffset);
 	},
 	componentWillUnmount: function() {
 		$(window).off('scroll', this.fixNav);
+		$(window).off('resize', this.updateOffset);
 	},
 	render: function() {
 		return (
