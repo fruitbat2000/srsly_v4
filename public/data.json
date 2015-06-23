@@ -57,6 +57,7 @@
       "desc": "Version 4 of the SRSLY website uses React for speedy rendering, good SEO and because I needed an excuse to teach it to myself. It's by no means perfect, but it's been a very educational journey ;). Aside from React, it uses LESS, and runs on a Node Express server for server-side rendering.",
       "brand": "SRSLY",
       "brand_code": "srsly",
+      "images": ["srslyv4.png"],
       "skills": ["HTML5", "CSS3", "Javascript", "React", "Webpack", "Grunt", "LESS", "Node", "Express"],
       "labs": true
     },
@@ -66,16 +67,8 @@
       "desc": "Saatchi & Saatchi wanted to launch a new website that reflected their brand ideals whilst showing off their work. I came onto the project after most of the hard work was done, but still had the opportunity to get involved with a lot of the fiddly animation bits as well as some work with the Google Maps API and building a couple of templates.",
       "brand": "Saatchi & Saatchi",
       "brand_code": "saatchi",
+      "images": ["saatchi.png"],
       "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "LESS", "Grunt", "PHP"],
-      "labs": false
-    },
-    {
-      "id": "006",
-      "title": "Lurpak Food Adventures",
-      "desc": "Food Adventures is a bit like Facebook, but for cooking - an ever-growing community of cooking enthusiasts who can follow/like their peers as well as submit photos of their latest cookery adventures. It was built upon the existing Lurpak Bake Club site, so much of the architecture already existed and this should have been a simple reskin. However, as always, scope crept and new content was added so there was some build involved in the end as well!",
-      "brand": "Lurpak",
-      "brand_code": "lurpak",
-      "skills": ["HTML5", "CSS3", "Javascript", "jQuery", "LESS", "PHP"],
       "labs": false
     },
     {
@@ -84,6 +77,7 @@
       "desc": "Xbox have a massive global CRM programme in Europe covering 23 different markets and broadcasting to more than 8 million people. Each bespoke email is built using an XSLT template, allowing us to pass each locale's content through it via an XML document and generate HTML emails that can be broadcast from Exact Target. I had the dubious honour of being Technical Team Leader for the Xbox account, which meant having final sign-off of all emails prior to broadcast as well as overseeing one other developer.",
       "brand": "Xbox",
       "brand_code": "xbox",
+      "images": ["xbox.png"],
       "skills": ["HTML", "XSLT"],
       "labs": false
     },
@@ -113,6 +107,7 @@
       "desc": "Candyland looks and feels like a Flash site - very heavy on the animation, non-traditional navigation etc - but it's built entirely in HTML5 and JS (Backbone) with CSS3 animation. Much of the animation work was done by designers in Adobe Edge and then integrated into the code, although some of the simpler movement were coded directly. The biggest challenge was actually making the site responsive as the layout really didn't lend itself to mobile/tablet at all. I think we may actually have won an award or two for this one :)",
       "brand": "Candyland",
       "brand_code": "candy",
+      "images": ["candyland.png"],
       "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "LESS", "Grunt"],
       "labs": false
     },
@@ -142,6 +137,7 @@
       "desc": "Altostratus is my attempt to build a fully fetured music player using the Dropbox API for music storage. It's not finished and was one of my first Backbone projects so definitely requires some refactoring, but given my lack of experience at the time it's a fairly good effort! It pulls file data from the user's Dropbox to populate albums/songs and then streams selected songs via a HTML5 audio element. It uses Backbone, LESS and Handlebars to do the magic.",
       "brand": "SRSLY Labs",
       "brand_code": "labs",
+      "images": ["altostratus.png"],
       "skills": ["HTML5", "CSS3", "Javascript", "Backbone", "LESS", "Grunt", "API", "Handlebars"],
       "labs": true
     },
@@ -161,6 +157,7 @@
       "desc": "To coincide with the launch of their Cook's Range products, Lurpak decided to redesign key areas of their site to promote the new range. This included a new homepage design (complete with subtly animated food!) and new product pages etc. The site already used a lot of page transitions and animations and the new designs didn't fit particularly well with the existing architecture so the challenge was to keep existing content and page transitions working whilst still being able to add the new look content.",
       "brand": "Lurpak",
       "brand_code": "lurpak",
+      "images": ["lurpak.png"],
       "skills": ["HTML5", "CSS3", "Javascript", "jQuery", "LESS", "PHP", "CMS"],
       "labs": false
     },
@@ -169,6 +166,7 @@
       "brand": "SRSLY Labs",
       "title": "Amazon Author Tracker",
       "brand_code": "labs",
+      "images": ["readMe.png"],
       "desc": "This is VERY much a work in progress. It uses the Amazon API to find authors and then bookmark them for future reference. When finished it would then email users when one of their bookmarked authors had a new book out/on preorder. Unfortunately, the 'new releases' endpoint on the Amazon API only returns a limited number of results so there's no particularly efficient way of making this work. Hence why I never really finished it! However, it was a good introduction to the MEAN stack and the first time I'd used Angular and MongoDB, so it was still a useful exercise :)",
       "skills": ["HTML5", "CSS3", "Javascript", "Angular", "Grunt", "MongoDB", "Node", "Express", "API"],
       "labs": true
