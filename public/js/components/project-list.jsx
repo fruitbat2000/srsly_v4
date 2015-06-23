@@ -82,6 +82,11 @@ var ProjectList = React.createClass({
 			this.props.onUserInput(id, project);
 		}
 	},
+	componentDidUpdate: function() {
+		var $el = $(React.findDOMNode(this.refs.projectList));
+
+		$el.width(containerSize).css('display', 'block');
+	},
 	calcProjectsPerRow: function() {
 		var projectWidth = projectSize + (projectMargin * 2),
 				perRow = Math.floor(this.props.componentWidth / projectWidth);
@@ -138,12 +143,10 @@ var ProjectList = React.createClass({
 		}
 
 		var projects = this.calcRows(projectArray).map(this.renderRow);
-		var styles = {
-			width: containerSize
-		}
+
 		return (
 			<div className="project-list">
-				<div style={styles}>{projects}</div>
+				<div ref="projectList">{projects}</div>
 			</div>
 		)
 	}

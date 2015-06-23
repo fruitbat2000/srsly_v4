@@ -10,7 +10,7 @@ var Intro = React.createClass({
 	},
 	setHeight: function() {
 		if (window.matchMedia("(max-width: 768px)").matches) {
-		  this.state.$parallax.css('height', '100%');
+		  this.state.$parallax.height(this.state.$introCopy.outerHeight());
 		} else {
 		  this.state.$parallax.height(this.state.$lines.height());
 		}
@@ -32,7 +32,8 @@ var Intro = React.createClass({
 
 		this.setState({
 			$parallax: $container.find('.parallax'),
-			$lines: $el
+			$lines: $el,
+			$introCopy: $container.find('.intro-copy')
 		}, this.setHeight);
 
 		$paths.each(function (i) {
