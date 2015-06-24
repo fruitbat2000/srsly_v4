@@ -21,7 +21,6 @@
 		width: 100%;
 
 		path {
-			animation: dash 2.5s linear forwards;
 			fill: none;
 			fill-rule: evenodd;
 			stroke: #666666;
@@ -34,6 +33,12 @@
 
 		@media only screen and (max-width: 768px) {
 			display: none;
+		}
+	}
+
+	.ready & {
+		path {
+			animation: dash 2.5s linear forwards;
 		}
 	}
 
