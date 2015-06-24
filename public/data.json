@@ -38,6 +38,7 @@
       "desc": "Whilst at AKQA, I was part of the team building the new MINI site. This was a huge project and also one of the first major projects in the world to use AEM6. I worked within a team of 20-30 developers producing reusable components that the website authors could place within the site's pages. AEM6 uses a templating system called Sightly which is HTML based and enables server-side JS models, so component development involved both server-side and client-side code. Many of the components also made use of a third party Angular service and we built our own Angular apps to integrate with it.",
       "brand": "MINI",
       "brand_code": "mini",
+      "images": ["mini.png"],
       "skills": ["HTML5", "CSS3", "Javascript", "Angular", "AEM6", "Sightly", "LESS"],
       "labs": false
     },
