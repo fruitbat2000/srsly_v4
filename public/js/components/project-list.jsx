@@ -4,9 +4,15 @@ var React = require('react'),
 		data = require('../../data.json'),
 		projectSize = 250,
 		projectMargin = 10,
+		$el,
 		containerSize;
 
 var ProjectList = React.createClass({
+	getInitialState: function() {
+		return {
+			viewport: ''
+		}
+	},
 	filterProjects: function(array) {
 		var newArray = [],
 				brandArray = [],
@@ -83,13 +89,30 @@ var ProjectList = React.createClass({
 		}
 	},
 	componentDidUpdate: function() {
-		var $el = $(React.findDOMNode(this.refs.projectList));
-
 		$el.width(containerSize).css('display', 'block');
 	},
-	calcProjectsPerRow: function() {
+	componentDidMount: function() {
+		$el = $(React.findDOMNode(this.refs.projectList));
+	},
+	componentWillReceiveProps: function(nextProps) {
+		this.setClass(nextProps.componentWidth);
+	},
+	setClass: function(width) {
+		if (this.calcProjectsPerRow(width) < 3) {
+			this.setState({
+				viewport: 'narrow'
+			});
+		} else {
+			this.setState({
+				viewport: 'wide'
+			});
+		}
+	},
+	calcProjectsPerRow: function(componentWidth) {
 		var projectWidth = projectSize + (projectMargin * 2),
-				perRow = Math.floor(this.props.componentWidth / projectWidth);
+				width = componentWidth || this.props.componentWidth,
+				perRow = Math.floor(width / projectWidth);
+
 		containerSize = projectWidth * perRow;
 
 		return perRow;
@@ -130,7 +153,7 @@ var ProjectList = React.createClass({
 		return (
 			<div className="project-row" key={index}>
 				{row.map(this.renderProject)}
-				{hasCurrent ? <ProjectDetail project={this.props.currentProject} /> : null}
+				{hasCurrent ? <ProjectDetail project={this.props.currentProject} viewport={this.state.viewport} /> : null}
 			</div>
 		)
 	},
@@ -146,7 +169,7 @@ var ProjectList = React.createClass({
 
 		return (
 			<div className="project-list">
-				<div ref="projectList">{projects}</div>
+				<div className={this.state.viewport} ref="projectList">{projects}</div>
 			</div>
 		)
 	}

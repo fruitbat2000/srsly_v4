@@ -5,16 +5,11 @@ var Intro = React.createClass({
 	getInitialState: function() {
 		return {
 			$parallax: null,
-			$lines: null
+			$introCopy: null
 		}
 	},
 	setHeight: function() {
-		if (window.matchMedia("(max-width: 768px)").matches) {
-		  this.state.$parallax.height(this.state.$introCopy.outerHeight());
-		} else {
-		  this.state.$parallax.height(this.state.$lines.height());
-		}
-		
+		 this.state.$parallax.height(this.state.$introCopy.outerHeight());
 	},
 	parallax: function(e) {
 		var scrollTop = window.pageYOffset,
@@ -32,7 +27,6 @@ var Intro = React.createClass({
 
 		this.setState({
 			$parallax: $container.find('.parallax'),
-			$lines: $el,
 			$introCopy: $container.find('.intro-copy')
 		}, this.setHeight);
 

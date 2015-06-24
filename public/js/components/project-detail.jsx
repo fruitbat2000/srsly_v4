@@ -14,15 +14,16 @@ var ProjectDetail = React.createClass({
 		$el = $(React.findDOMNode(this.refs.projectDetail));
 
 		var img = React.findDOMNode(this.refs.projectDetailImg),
-				$container = $el.parents('.colour-mask');
-
-		this.setHeight();
+				$container = $el.parents('.colour-mask'),
+				self = this;
 
 		img.addEventListener('load', function(){
 			var vibrant = new Vibrant(img, 64, 5),
 					swatches = vibrant.swatches(),
 					colour = swatches['Vibrant'].getRgb(),
 					bg = 'rgba('+colour[0]+','+colour[1]+','+colour[2]+',0.8)';
+
+			self.setHeight();
 
 			$container.css('background-color', bg);
 		});
@@ -37,12 +38,21 @@ var ProjectDetail = React.createClass({
 		}
 	},
 	setHeight: function() {
-		var figureHeight = $el.find('.project-desc').outerHeight(),
-				height = figureHeight + 40;
+		var figureHeight;
+
+		if (this.props.viewport === 'wide') {
+			figureHeight = $el.find('.project-desc').outerHeight();
+		} else {
+			figureHeight = 'auto';			
+		}
 
 		this.setState({
-			figureHeight: figureHeight,
-			height: height
+			figureHeight: figureHeight
+		}, function(){
+			var height = $el.find('.project-detail-wrapper').outerHeight() + 40;
+			this.setState({
+				height: height
+			});
 		});
 	},
 	render: function() {
@@ -61,13 +71,15 @@ var ProjectDetail = React.createClass({
 		});
 		return (
 			<div className="project-detail" ref="projectDetail" style={{height: this.state.height}}>
-				<figure className="project-img" style={{minHeight: this.state.figureHeight}}>
-					<img src={imgSrc} alt={project.title} ref="projectDetailImg" />
-				</figure>
-				<div className="project-desc">
-					<h3>{project.title}</h3>
-					<p>{project.desc}</p>
-					<ul>{projectSkills}</ul>
+				<div className="project-detail-wrapper">
+					<figure className="project-img" style={{minHeight: this.state.figureHeight}}>
+						<img src={imgSrc} alt={project.title} ref="projectDetailImg" />
+					</figure>
+					<div className="project-desc">
+						<h3>{project.title}</h3>
+						<p>{project.desc}</p>
+						<ul>{projectSkills}</ul>
+					</div>
 				</div>
 			</div>
 		)

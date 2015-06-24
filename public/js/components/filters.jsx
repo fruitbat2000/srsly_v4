@@ -3,6 +3,7 @@ var React = require('react'),
 
 var FilterSkills = React.createClass({
 	handleChange: function(e) {
+		e.stopPropagation();
 		this.props.onUserInput(
 			'skill',
 			e.target.name,
@@ -33,6 +34,7 @@ var FilterSkills = React.createClass({
 
 var FilterBrands = React.createClass({
 	handleChange: function(e) {
+		e.stopPropagation();
 		this.props.onUserInput(
 			'brand',
 			e.target.name,
@@ -86,12 +88,21 @@ var FilterType = React.createClass({
 });
 
 var Filters = React.createClass({
+	componentDidMount: function() {
+		var $el = $(React.findDOMNode(this.refs.filters));
+
+		$el.on('click', function(e){
+			if (e.target === $el[0]) {
+				$el.toggleClass('open');
+			}
+		});
+	},
 	handleUserInput: function(type, name, value) {
 		this.props.onUserInput(type, name, value);
 	},
 	render: function() {
 		return (
-			<aside className="filters">
+			<aside className="filters" ref="filters">
 				<FilterSkills onUserInput={this.handleUserInput} data={data.skills} />
 				<FilterBrands onUserInput={this.handleUserInput} data={data.brands} />
 			</aside>
