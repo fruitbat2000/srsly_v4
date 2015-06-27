@@ -7,11 +7,15 @@
 	}
 
 	.parallax {
-		background: @yellow;
+		background: @light-grey;
 		max-width: 1500px;
 		position: fixed;
 		width: 100%;
 		z-index: -1;
+
+		@media only screen and (max-width: 768px) {
+			background: @yellow;
+		}
 	}
 
 	svg {
