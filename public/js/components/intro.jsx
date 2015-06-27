@@ -35,6 +35,8 @@ var Intro = React.createClass({
 			$(this).css({'stroke-dasharray': length, 'stroke-dashoffset': length, 'stroke-opacity': '1'});
 		});
 
+		$el.parents('body').addClass('ready');
+
 		setTimeout(function(){
 			$container.addClass('go');
 		}, 2500);
