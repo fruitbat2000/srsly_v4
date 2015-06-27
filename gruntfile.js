@@ -90,7 +90,7 @@ module.exports = function(grunt) {
 
 
   //default task
-  grunt.registerTask('default', ['jshint', 'less']);
+  grunt.registerTask('default', ['jshint', 'less', 'webpack']);
 
   //other tasks
   grunt.registerTask('styles', 'less');
