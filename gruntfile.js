@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
   var path = require("path");
+  var webpack = require('webpack');
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -16,12 +17,7 @@ module.exports = function(grunt) {
     },
 
     webpack: {
-      build: {
-        entry: './public/js/app.js',
-        output: {
-          path: './public/js/',
-          filename: 'bundle.js'
-        },
+      options: {
         debug: true,
         stats: {
           colors: true,
@@ -40,6 +36,23 @@ module.exports = function(grunt) {
         },
         resolveLoader: {
           root: path.join(__dirname, "node_modules")
+        }
+      },
+      build: {
+        entry: './public/js/app.js',
+        output: {
+          path: './public/js/',
+          filename: 'bundle.js'
+        }
+      },
+      prod: {
+        entry: './public/js/app.js',
+        plugins: [
+          new webpack.optimize.UglifyJsPlugin()
+        ],
+        output: {
+          path: './public/js/',
+          filename: 'bundle.min.js'
         }
       }
     },
@@ -74,7 +87,7 @@ module.exports = function(grunt) {
       },
       webpack: {
         files: ['public/js/**/*'],
-        tasks: ['webpack'],
+        tasks: ['webpack:build'],
         options: {
           spawn: false
         }
@@ -90,9 +103,10 @@ module.exports = function(grunt) {
 
 
   //default task
-  grunt.registerTask('default', ['jshint', 'less', 'webpack']);
+  grunt.registerTask('default', ['jshint', 'less', 'webpack:build']);
 
   //other tasks
   grunt.registerTask('styles', 'less');
   grunt.registerTask('test', 'jshint');
+  grunt.registerTask('prod', ['less', 'webpack:prod']);
 };
