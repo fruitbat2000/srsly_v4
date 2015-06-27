@@ -1,25 +1,21 @@
 #intro {
-	background: @bg-grey;
+	padding-bottom: 56.7%;
+	position: relative;
 
 	@media only screen and (max-width: 768px) {
-		background: @yellow;
-	}
-
-	.spacer {
-		padding-bottom: 56.7%;
-		position: relative;
-		z-index: 1;
-
-		@media only screen and (max-width: 768px) {
-			padding-bottom: 0;
-		}
+		padding-bottom: 0;
 	}
 
 	.parallax {
+		background: @bg-grey;
 		max-width: 1500px;
 		position: fixed;
 		width: 100%;
 		z-index: -1;
+
+		@media only screen and (max-width: 768px) {
+			background: @yellow;
+		}
 	}
 
 	svg {
