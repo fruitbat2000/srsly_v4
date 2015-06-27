@@ -87,7 +87,7 @@ module.exports = function(grunt) {
       },
       webpack: {
         files: ['public/js/**/*'],
-        tasks: ['webpack:build'],
+        tasks: ['webpack:prod'],
         options: {
           spawn: false
         }

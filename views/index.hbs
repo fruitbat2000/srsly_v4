@@ -9,6 +9,18 @@
     <div id="content">{{{markup}}}</div>
   </body>
   <script src="js/libs/jquery-1.11.3.min.js"></script>
+  <script>
+    $('path').each(function () {
+      var length = this.getTotalLength();
+      $(this).css({'stroke-dasharray': length, 'stroke-dashoffset': length, 'stroke-opacity': '1'});
+    });
+
+    $('body').addClass('ready');
+
+    setTimeout(function(){
+      $('#intro').addClass('go');
+    }, 2500);
+  </script>
   <script async src="js/libs/vibrant.js"></script>
   <script async src="js/bundle.min.js"></script>
   <link rel="stylesheet" href="css/logos.css" />

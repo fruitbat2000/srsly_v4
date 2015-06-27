@@ -30,17 +30,6 @@ var Intro = React.createClass({
 			$introCopy: $container.find('.intro-copy')
 		}, this.setHeight);
 
-		$paths.each(function (i) {
-			var length = this.getTotalLength();
-			$(this).css({'stroke-dasharray': length, 'stroke-dashoffset': length, 'stroke-opacity': '1'});
-		});
-
-		$el.parents('body').addClass('ready');
-
-		setTimeout(function(){
-			$container.addClass('go');
-		}, 2500);
-
 		$(window).on('scroll', this.parallax);
 		$(window).on('resize', this.setHeight);
 	},
