@@ -51,7 +51,7 @@ var ProjectDetail = React.createClass({
 		this.setState({
 			figureHeight: figureHeight,
 			height: height,
-			padding: '40px'
+			padding: '20px'
 		});
 	},
 	render: function() {
