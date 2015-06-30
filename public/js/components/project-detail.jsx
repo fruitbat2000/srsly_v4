@@ -7,6 +7,7 @@ var ProjectDetail = React.createClass({
 		return {
 			figureHeight: 0,
 			height: 0,
+			padding: 0,
 			animate: false
 		}
 	},
@@ -38,7 +39,8 @@ var ProjectDetail = React.createClass({
 		}
 	},
 	setHeight: function() {
-		var figureHeight;
+		var figureHeight,
+				height = $el.find('.project-detail-wrapper').outerHeight() + 40;
 
 		if (this.props.viewport === 'wide') {
 			figureHeight = $el.find('.project-desc').outerHeight();
@@ -47,12 +49,9 @@ var ProjectDetail = React.createClass({
 		}
 
 		this.setState({
-			figureHeight: figureHeight
-		}, function(){
-			var height = $el.find('.project-detail-wrapper').outerHeight() + 40;
-			this.setState({
-				height: height
-			});
+			figureHeight: figureHeight,
+			height: height,
+			padding: '40px'
 		});
 	},
 	render: function() {
@@ -70,7 +69,7 @@ var ProjectDetail = React.createClass({
 			)
 		});
 		return (
-			<div className="project-detail" ref="projectDetail" style={{height: this.state.height}}>
+			<div className="project-detail" ref="projectDetail" style={{height: this.state.height, padding: this.state.padding}}>
 				<div className="project-detail-wrapper">
 					<figure className="project-img" style={{minHeight: this.state.figureHeight}}>
 						<img src={imgSrc} alt={project.title} ref="projectDetailImg" />
