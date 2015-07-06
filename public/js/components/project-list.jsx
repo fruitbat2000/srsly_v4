@@ -10,7 +10,8 @@ var React = require('react'),
 var ProjectList = React.createClass({
 	getInitialState: function() {
 		return {
-			viewport: ''
+			viewport: '',
+			columnClass: ''
 		}
 	},
 	filterProjects: function(array) {
@@ -98,13 +99,17 @@ var ProjectList = React.createClass({
 		this.setClass(nextProps.componentWidth);
 	},
 	setClass: function(width) {
+		var columnClass = 'column-'+ this.calcProjectsPerRow(width);
+
 		if (this.calcProjectsPerRow(width) < 3) {
 			this.setState({
-				viewport: 'narrow'
+				viewport: 'narrow',
+				columns: columnClass
 			});
 		} else {
 			this.setState({
-				viewport: 'wide'
+				viewport: 'wide',
+				columns: columnClass
 			});
 		}
 	},
@@ -165,11 +170,12 @@ var ProjectList = React.createClass({
 			projectArray = this.props.data;
 		}
 
-		var projects = this.calcRows(projectArray).map(this.renderRow);
+		var projects = this.calcRows(projectArray).map(this.renderRow),
+				classString = this.state.viewport+' '+this.state.columns;
 
 		return (
 			<div className="project-list">
-				<div className={this.state.viewport} ref="projectList">{projects}</div>
+				<div className={classString} ref="projectList">{projects}</div>
 			</div>
 		)
 	}
