@@ -73,7 +73,6 @@ var Nav = React.createClass({
 		$(window).off('resize', this.updateOffset);
 	},
 	render: function() {
-		console.log('render');
 		return (
 			<div className="nav-container">
 				<nav ref="nav">
