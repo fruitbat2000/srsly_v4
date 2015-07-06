@@ -12,11 +12,13 @@ var ProjectDetail = React.createClass({
 		}
 	},
 	componentDidMount: function() {
+		console.log('componentDidMount');
 		$el = $(React.findDOMNode(this.refs.projectDetail));
 
 		var img = React.findDOMNode(this.refs.projectDetailImg),
-				$container = $el.parents('.colour-mask'),
-				self = this;
+				$container = $el.parents('.colour-mask');
+
+		this.setHeight();
 
 		img.addEventListener('load', function(){
 			var vibrant = new Vibrant(img, 64, 5),
@@ -24,15 +26,15 @@ var ProjectDetail = React.createClass({
 					colour = swatches['Vibrant'].getRgb(),
 					bg = 'rgba('+colour[0]+','+colour[1]+','+colour[2]+',0.8)';
 
-			self.setHeight();
-
 			$container.css('background-color', bg);
 		});
 	},
 	componentWillReceiveProps: function() {
+		console.log('componentWillReceiveProps');
 		this.setState({animate: true});
 	},
 	componentDidUpdate: function() {
+		console.log('componentDidUpdate');
 		if (this.state.animate) {
 			this.setHeight();
 			this.setState({animate: false});
