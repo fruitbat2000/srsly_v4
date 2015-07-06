@@ -39,6 +39,7 @@ var ProjectDetail = React.createClass({
 		}
 	},
 	setHeight: function() {
+		console.log('setHeight');
 		var figureHeight,
 				height = $el.find('.project-detail-wrapper').outerHeight() + 40;
 
@@ -50,11 +51,11 @@ var ProjectDetail = React.createClass({
 
 		this.setState({
 			//figureHeight: figureHeight,
-			height: height,
-			padding: '20px'
+			height: height
 		});
 	},
 	render: function() {
+		console.log('render');
 		var project = this.props.project,
 				imgSrc;
 
@@ -69,7 +70,7 @@ var ProjectDetail = React.createClass({
 			)
 		});
 		return (
-			<div className="project-detail" ref="projectDetail" style={{height: this.state.height, padding: '20px'}}>
+			<div className="project-detail" ref="projectDetail" style={{height: this.state.height}}>
 				<div className="project-detail-wrapper">
 					<figure className="project-img" style={{minHeight: this.state.figureHeight}}>
 						<img src={imgSrc} alt={project.title} ref="projectDetailImg" />
