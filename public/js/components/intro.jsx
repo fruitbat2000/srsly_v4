@@ -16,9 +16,11 @@ var Intro = React.createClass({
 				$el = this.state.$parallax,
 				newTop = -scrollTop * .5 + 'px';
 
-		window.requestAnimationFrame(function(){
-			$el.css('top', newTop);
-		});
+		if (scrollTop < $el.outerHeight()) {
+			window.requestAnimationFrame(function(){
+				$el.css('top', newTop);
+			});
+		}
 	},
 	componentDidMount: function() {
 		var $el = $(React.findDOMNode(this.refs.kittenLines)),

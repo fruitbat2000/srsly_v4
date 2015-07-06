@@ -31,14 +31,26 @@ var Nav = React.createClass({
 	getInitialState: function() {
 		return {
 			el: null,
-			offset: null
+			offset: null,
+			fixed: false
 		}
 	},
 	fixNav: function() {
-		if (window.pageYOffset > this.state.offset) {
-			this.state.el.css('position', 'fixed');
-		} else {
-			this.state.el.css('position', 'relative');
+		var self = this;
+		if (window.pageYOffset > self.state.offset && !self.state.fixed) {
+			window.requestAnimationFrame(function(){
+				self.state.el.css('position', 'fixed');
+			});
+			self.setState({
+				fixed: true
+			});
+		} else if (window.pageYOffset < self.state.offset && self.state.fixed) {
+			window.requestAnimationFrame(function(){
+				self.state.el.css('position', 'relative');
+			});
+			self.setState({
+				fixed: false
+			});
 		}
 	},
 	updateOffset: function() {
