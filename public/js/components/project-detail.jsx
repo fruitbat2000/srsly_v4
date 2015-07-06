@@ -12,7 +12,6 @@ var ProjectDetail = React.createClass({
 		}
 	},
 	componentDidMount: function() {
-		console.log('componentDidMount');
 		$el = $(React.findDOMNode(this.refs.projectDetail));
 
 		var img = React.findDOMNode(this.refs.projectDetailImg),
@@ -30,34 +29,30 @@ var ProjectDetail = React.createClass({
 		});
 	},
 	componentWillReceiveProps: function() {
-		console.log('componentWillReceiveProps');
 		this.setState({animate: true});
 	},
 	componentDidUpdate: function() {
-		console.log('componentDidUpdate');
 		if (this.state.animate) {
 			this.setHeight();
 			this.setState({animate: false});
 		}
 	},
 	setHeight: function() {
-		console.log('setHeight');
 		var figureHeight,
 				height = $el.find('.project-detail-wrapper').outerHeight() + 40;
 
-		/*if (this.props.viewport === 'wide') {
+		if (this.props.viewport === 'wide') {
 			figureHeight = $el.find('.project-desc').outerHeight();
 		} else {
 			figureHeight = 'auto';			
-		}*/
+		}
 
 		this.setState({
-			//figureHeight: figureHeight,
+			figureHeight: figureHeight,
 			height: height
 		});
 	},
 	render: function() {
-		console.log('render');
 		var project = this.props.project,
 				imgSrc;
 
