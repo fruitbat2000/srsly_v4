@@ -33,16 +33,6 @@
       "labs": false
     },
     {
-      "id": "002",
-      "title": "MINI Digital",
-      "desc": "Whilst at AKQA, I was part of the team building the new MINI site. This was a huge project and also one of the first major projects in the world to use AEM6. I worked within a team of 20-30 developers producing reusable components that the website authors could place within the site's pages. AEM6 uses a templating system called Sightly which is HTML based and enables server-side JS models, so component development involved both server-side and client-side code. Many of the components also made use of a third party Angular service and we built our own Angular apps to integrate with it.",
-      "brand": "MINI",
-      "brand_code": "mini",
-      "images": ["mini.png"],
-      "skills": ["HTML5", "CSS3", "Javascript", "Angular", "AEM6", "Sightly", "LESS"],
-      "labs": false
-    },
-    {
       "id": "003",
       "title": "Toyota Test Drive",
       "desc": "Toyota asked Saatchi & Saatchi to help increase test drives of their Hybrid range, so we built a web app that would allow people to book a car to pick them up at work, take them on a test drive and then drop them back again. This was prior the launch of Uber, but the idea was similar - a map with real time tracking of nearby drivable Hybrids that you can book to come and get you within an hour. The app was built in Backbone on an Express server and used socketIO to update car positions via the Google Maps API. It was awesome, but sadly Toyota ran into legal issues in the final stages and it never launched.",
