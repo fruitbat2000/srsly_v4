@@ -1,5 +1,6 @@
 var React = require('react'),
-		data = require('../../data.json');
+		data = require('../../data.json'),
+		width = 0;
 
 var NavList = React.createClass({
 	handleClick: function(href, e) {
@@ -54,10 +55,13 @@ var Nav = React.createClass({
 		}
 	},
 	updateOffset: function() {
-		this.setState({
-			el: $(React.findDOMNode(this.refs.nav)),
-			offset: $(React.findDOMNode(this.refs.nav)).offset().top
-		});
+		if($(window).width() != width) {
+			this.setState({
+				el: $(React.findDOMNode(this.refs.nav)),
+				offset: $(React.findDOMNode(this.refs.nav)).offset().top
+			});
+			width = $(window).width();
+		}
 	},
 	componentDidMount: function() {
 		this.updateOffset();
@@ -69,6 +73,7 @@ var Nav = React.createClass({
 		$(window).off('resize', this.updateOffset);
 	},
 	render: function() {
+		console.log('render');
 		return (
 			<div className="nav-container">
 				<nav ref="nav">

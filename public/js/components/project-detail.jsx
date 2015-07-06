@@ -1,5 +1,6 @@
 var React = require('react'),
 		data = require('../../data.json'),
+		oldId = null,
 		$el;
 
 var ProjectDetail = React.createClass({
@@ -29,7 +30,7 @@ var ProjectDetail = React.createClass({
 			$container.css('background-color', bg);
 		});
 	},
-	componentWillReceiveProps: function() {
+	componentWillReceiveProps: function(nextProps) {
 		this.setState({animate: true});
 	},
 	componentDidUpdate: function() {
@@ -40,9 +41,13 @@ var ProjectDetail = React.createClass({
 		}
 	},
 	scrollTop: function() {
-		$('html, body').animate({
-		  scrollTop: $el.offset().top + -250
-		}, 300);
+		if (this.props.project.id !== oldId) {
+			$('html, body').animate({
+			  scrollTop: $el.offset().top + -250
+			}, 300);
+			
+			oldId = this.props.project.id;
+		}
 	},
 	setHeight: function() {
 		var figureHeight,

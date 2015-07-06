@@ -11,7 +11,7 @@ var Intro = React.createClass({
 	setHeight: function() {
 		 this.state.$parallax.height(this.state.$introCopy.outerHeight());
 	},
-	parallax: function(e) {
+	parallax: function() {
 		var scrollTop = window.pageYOffset,
 				$el = this.state.$parallax,
 				newTop = -scrollTop * .5 + 'px';
