@@ -18,6 +18,7 @@ var ProjectDetail = React.createClass({
 				$container = $el.parents('.colour-mask');
 
 		this.setHeight();
+		this.scrollTop();
 
 		img.addEventListener('load', function(){
 			var vibrant = new Vibrant(img, 64, 5),
@@ -34,17 +35,25 @@ var ProjectDetail = React.createClass({
 	componentDidUpdate: function() {
 		if (this.state.animate) {
 			this.setHeight();
+			this.scrollTop();
 			this.setState({animate: false});
 		}
 	},
+	scrollTop: function() {
+		$('html, body').animate({
+		  scrollTop: $el.offset().top + -250
+		}, 300);
+	},
 	setHeight: function() {
 		var figureHeight,
-				height = $el.find('.project-detail-wrapper').outerHeight() + 40;
+				height;
 
 		if (this.props.viewport === 'wide') {
 			figureHeight = $el.find('.project-desc').outerHeight();
+			height = figureHeight + 40;
 		} else {
-			figureHeight = 'auto';			
+			figureHeight = 'auto';
+			height = $el.find('.project-detail-wrapper').outerHeight() + 40;		
 		}
 
 		this.setState({
