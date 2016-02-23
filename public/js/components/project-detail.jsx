@@ -84,7 +84,9 @@ var ProjectDetail = React.createClass({
 			<div className="project-detail" ref="projectDetail" style={{height: this.state.height}}>
 				<div className="project-detail-wrapper">
 					<figure className="project-img" style={{minHeight: this.state.figureHeight}}>
-						<img src={imgSrc} alt={project.title} ref="projectDetailImg" />
+						<div>
+							<img src={imgSrc} alt={project.title} ref="projectDetailImg" />
+						</div>
 					</figure>
 					<div className="project-desc">
 						<h3>{project.title}</h3>
