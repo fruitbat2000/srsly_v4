@@ -19,7 +19,9 @@
     "Webpack",
     "RequireJS",
     "Stylus",
-    "Handlebars"
+    "Handlebars",
+    "Knockout",
+    "Gulp"
   ],
   "projects": [
     {
@@ -171,6 +173,26 @@
       "desc": "This is VERY much a work in progress. It uses the Amazon API to find authors and then bookmark them for future reference. When finished it would then email users when one of their bookmarked authors had a new book out/on preorder. Unfortunately, the 'new releases' endpoint on the Amazon API only returns a limited number of results so there's no particularly efficient way of making this work. Hence why I never really finished it! However, it was a good introduction to the MEAN stack and the first time I'd used Angular and MongoDB, so it was still a useful exercise :)",
       "skills": ["HTML5", "CSS3", "Javascript", "Angular", "Grunt", "MongoDB", "Node", "Express", "API"],
       "labs": true
+    },
+    {
+      "id": "017",
+      "brand": "Heineken",
+      "title": "Heineken Rugby",
+      "brand_code": "heineken",
+      "images": ["heineken.png"],
+      "desc": "Heineken launched a site to coincide with the Rugby World Cup that included news, interviews, polls and competitions etc. It was built in Angular, on top of Python on Google App Engine, with a Firebase DB for realtime poll updates etc. I came onto the project towards the end and was mostly tasked with getting everything pixel perfect, adding some funky transitions/animations and fixing some JS issues.",
+      "skills": ["HTML5", "CSS3", "Javascript", "Angular", "SASS", "Firebase"],
+      "labs": false
+    },
+    {
+      "id": "018",
+      "brand": "Royal Mail",
+      "title": "Mailshots Online",
+      "brand_code": "royalmail",
+      "images": ["mailshots.png"],
+      "desc": "Mailshots Online is a bit like MailChimp but for snail mail. Royal Mail wanted to give their customers the means to design, print and send quality mailshots directly from a web interface, complete with the ability to create and buy targetted customer data lists. I worked mainly on the data side of things, building the capability to upload .csv files of customer data, add data manually and then edit/view/search data lists etc. The site is built with Knockout for two-way data binding on a .NET backend",
+      "skills": ["HTML5", "CSS3", "Javascript", "Knockout", "Gulp", "SASS", ".NET", "Razor"],
+      "labs": false
     }
   ],
   "navItems": [
@@ -190,6 +212,8 @@
     "XBOX",
     "Lurpak",
     "Candyland",
-    "Saatchi & Saatchi"
+    "Saatchi & Saatchi",
+    "Royal Mail",
+    "Heineken"
   ]
 }
