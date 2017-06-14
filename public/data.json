@@ -193,6 +193,16 @@
       "desc": "Mailshots Online is a bit like MailChimp but for snail mail. Royal Mail wanted to give their customers the means to design, print and send quality mailshots directly from a web interface, complete with the ability to create and buy targetted customer data lists. I worked mainly on the data side of things, building the capability to upload .csv files of customer data, add data manually and then edit/view/search data lists etc. The site is built with Knockout for two-way data binding on a .NET backend",
       "skills": ["HTML5", "CSS3", "Javascript", "Knockout", "Gulp", "SASS", ".NET", "Razor"],
       "labs": false
+    },
+    {
+      "id": "019",
+      "brand": "Mercedes",
+      "title": "Compact Cars POS",
+      "brand_code": "mercedes",
+      "images": ["mercedes.png"],
+      "desc": "Mercedes wanted to build a touchscreen POS application to allow potential customers to explore their range of compact cars whilst waiting in a dealership. The result was heavy on animation and touch interaction with a spinnable colour wheel and multiple drag/swipe interactions so I used GSAP to help handle the more complex animations, whilst everything else was coded in vanilla JS. The real challenge was getting it all to run smoothly on a touchscreen panel with all the computing power of a brick!",
+      "skills": ["HTML5", "CSS3", "Javascript", "Gulp", "SASS", "GSAP"],
+      "labs": false
     }
   ],
   "navItems": [
@@ -214,6 +224,7 @@
     "Candyland",
     "Saatchi & Saatchi",
     "Royal Mail",
-    "Heineken"
+    "Heineken",
+    "Mercedes"
   ]
 }
